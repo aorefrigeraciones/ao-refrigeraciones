@@ -1,198 +1,259 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AO Refrigeraciones – Servicio técnico y repuestos en Rufino</title>
-  <meta name="description" content="Instalación, reparación y mantenimiento de aires, heladeras y cámaras. Venta de insumos y repuestos. Rufino y zona.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <!-- Fuentes de la guía -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AO Refrigeraciones | Servicio técnico, repuestos y cámaras en Rufino</title>
+  <meta name="description" content="Instalación, mantenimiento y reparación de aires, heladeras y cámaras frigoríficas. Servicio Oficial INELRO. Envíos a todo el país. Rufino y zona.">
+
+  <!-- Favicon (ambos, por compatibilidad) -->
+  <link rel="icon" href="/logo-isotipo.png?v=2" type="image/png">
+  <link rel="icon" href="/logo-isotipo.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/logo-isotipo.png?v=2">
+
+  <!-- Open Graph / Share -->
+  <meta property="og:title" content="AO Refrigeraciones – Servicio técnico y repuestos">
+  <meta property="og:description" content="Refrigeración profesional. Servicio Oficial INELRO. Envíos a todo el país.">
+  <meta property="og:image" content="https://aorefrigeraciones.com.ar/logo-isotipo.png?v=2">
+  <meta property="og:type" content="website">
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Roboto+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/styles.css?v=3" />
 </head>
 <body>
-  <!-- Header -->
+
+  <!-- HEADER (con fallback de logos y cache-busting) -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="/">
-        <!-- Si subís tu logo como /logo.svg se verá acá -->
-        <img class="logo" src="/logo.svg" alt="AO Refrigeraciones" onerror="this.style.display='none'">
-        <strong class="wordmark">AO Refrigeraciones</strong>
+      <a class="brand" href="/" aria-label="AO Refrigeraciones - Inicio">
+        <picture>
+          <!-- Desktop: intenta SVG y luego PNG -->
+          <source media="(min-width:900px)" srcset="/logo-horizontal.svg?v=2">
+          <source media="(min-width:900px)" srcset="/logo-horizontal.png?v=2">
+          <!-- Mobile: intenta SVG y luego PNG -->
+          <source srcset="/logo.svg?v=2">
+          <img id="aoLogo" class="logo" src="/logo.png?v=2" alt="AO Refrigeraciones">
+        </picture>
       </a>
-      <nav class="links">
+      <nav class="links" aria-label="Principal">
         <a href="#servicios">Servicios</a>
         <a href="#tienda">Tienda</a>
+        <a href="#trabajos">Trabajos</a>
         <a href="#contacto">Contacto</a>
         <a class="btn btn-primary" target="_blank"
-           href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quisiera%20un%20presupuesto.">📲 WhatsApp</a>
+           href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">📲 WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero section">
     <div class="container hero-grid">
       <div class="hero-copy card soft">
-        <span class="badge">Servicio técnico + repuestos</span>
-        <h1>Refrigeración profesional para hogar y comercio</h1>
-        <p>Instalación, reparación y mantenimiento de <b>aires</b>, <b>heladeras</b> y <b>cámaras</b>. También <b>insumos y repuestos</b> con asesoramiento.</p>
+        <span class="badge">✅ Servicio Oficial INELRO</span>
+        <h1>Expertos en refrigeración para hogar y comercio</h1>
+        <p>Instalación, mantenimiento y reparación de <b>aires</b>, <b>heladeras</b> y <b>cámaras frigoríficas</b>. Envíos a todo el país y asesoramiento técnico.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" target="_blank"
-             href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20coordinar%20una%20visita.">Pedir turno</a>
+          <a class="btn btn-primary" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20coordinar%20una%20visita.">Pedir turno</a>
           <a class="btn btn-outline" href="#tienda">Ver tienda</a>
         </div>
         <ul class="kpis">
-          <li><strong>24–48 h</strong><span>Turnos rápidos</span></li>
-          <li><strong>+8 años</strong><span>Experiencia</span></li>
+          <li><strong>+8 años</strong><span>de experiencia</span></li>
           <li><strong>Garantía</strong><span>por escrito</span></li>
+          <li><strong>24–48 h</strong><span>turnos rápidos</span></li>
         </ul>
       </div>
       <div class="hero-media card dashed">
-        <div class="placeholder">Subí una foto de trabajo (1200×800)</div>
+        <div class="placeholder">Subí <code>banner.jpg</code> (1600×900)</div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
+  <!-- BANNER FOTO -->
+  <section class="section">
+    <div class="container">
+      <div class="card banner-card">
+        <img class="banner" src="/banner.jpg?v=2" alt="Trabajos de AO Refrigeraciones" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
   <section id="servicios" class="section">
     <div class="container">
       <h2>Servicios</h2>
       <div class="grid-3">
-        <article class="card service">
-          <h3>Instalación de Split</h3>
-          <p>Montaje prolijo, vacío correcto y prueba de rendimiento. Garantía incluida.</p>
-        </article>
-        <article class="card service">
-          <h3>Mantenimiento y limpieza</h3>
-          <p>Limpieza profunda, revisión eléctrica y carga de refrigerante.</p>
-        </article>
-        <article class="card service">
-          <h3>Reparación de heladeras</h3>
-          <p>Diagnóstico, cambio de compresor/plaqueta, solución de fugas y termostatos.</p>
-        </article>
+        <article class="card service"><h3>Instalación de Split</h3><p>Montaje prolijo, vacío correcto y prueba de rendimiento.</p></article>
+        <article class="card service"><h3>Mantenimiento y limpieza</h3><p>Limpieza profunda, revisión eléctrica y carga de refrigerante.</p></article>
+        <article class="card service"><h3>Reparación de heladeras</h3><p>Diagnóstico, compresor/plaqueta y solución de fugas.</p></article>
+        <article class="card service"><h3>Cámaras frigoríficas</h3><p>Instalación y mantenimiento programado para comercios.</p></article>
+        <article class="card service"><h3>Mantenimiento preventivo</h3><p>Planes mensuales para evitar fallas y ahorrar energía.</p></article>
+        <article class="card service"><h3>Refrigeración para transporte</h3><p>Asesoramiento y servicio especializado. Próximamente.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- TIENDA CATÁLOGO -->
-  <section id="tienda" class="section section-alt">
+  <!-- SERVICIO OFICIAL INELRO -->
+  <section class="section section-inelro">
+    <div class="container inelro-grid">
+      <div class="inelro-copy">
+        <h2>Servicio Técnico Oficial INELRO</h2>
+        <ul class="ticks">
+          <li>Repuestos <b>100% originales</b> provistos por fábrica</li>
+          <li>Procedimientos y <b>capacitaciones homologadas</b></li>
+          <li><b>Garantía por escrito</b> según política de fábrica</li>
+        </ul>
+        <a class="btn btn-light" target="_blank" href="https://wa.me/543382411473?text=Quiero%20servicio%20oficial%20INELRO">Solicitar servicio oficial</a>
+      </div>
+      <div class="inelro-media card">
+        <div class="placeholder dark">Acá va el logo INELRO (subí <code>inelro-logo.png</code>)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA -->
+  <section id="tienda" class="section">
     <div class="container">
+      <div class="notice"><span class="badge-truck">🚚</span><strong>Envíos a todo el país</strong> · Consultá por stock</div>
       <h2>Tienda de insumos y repuestos</h2>
       <p class="muted">Catálogo simple. Tocá “Consultar” y te atendemos por WhatsApp.</p>
 
       <div class="grid-3">
-
-        <!-- Cada producto deriva a WhatsApp con el nombre automáticamente -->
+        <!-- Editá nombres y fotos cuando tengas la tabla final -->
         <article class="card product" data-product="Gas R410A – Cilindro 5kg">
-          <div class="p-img"></div>
-          <h3>Gas R410A – Cilindro 5kg</h3>
-          <p>Refrigerante original sellado para equipos inverter/alta eficiencia.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
+          <img class="p-img" src="/productos/producto-1.jpg" onerror="this.src='https://placehold.co/600x400?text=Gas+R410A'" alt="Gas R410A">
+          <h3>Gas R410A – Cilindro 5kg</h3><p>Refrigerante original sellado para equipos inverter.</p>
+          <div class="price-row"><span class="price">$ —</span><a class="btn btn-primary wa">Consultar</a></div>
         </article>
 
         <article class="card product" data-product="Termostato Universal">
-          <div class="p-img p2"></div>
-          <h3>Termostato Universal</h3>
-          <p>Compatible con la mayoría de heladeras familiares.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
+          <img class="p-img" src="/productos/producto-2.jpg" onerror="this.src='https://placehold.co/600x400?text=Termostato+Universal'" alt="Termostato Universal">
+          <h3>Termostato Universal</h3><p>Compatible con la mayoría de heladeras familiares.</p>
+          <div class="price-row"><span class="price">$ —</span><a class="btn btn-primary wa">Consultar</a></div>
         </article>
 
         <article class="card product" data-product="Bomba de vacío 1/4 HP">
-          <div class="p-img p3"></div>
-          <h3>Bomba de vacío 1/4 HP</h3>
-          <p>Caudal estable y bajo ruido. Herramienta para técnicos.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
+          <img class="p-img" src="/productos/producto-3.jpg" onerror="this.src='https://placehold.co/600x400?text=Bomba+de+vacio+1%2F4HP'" alt="Bomba de vacío 1/4 HP">
+          <h3>Bomba de vacío 1/4 HP</h3><p>Caudal estable y bajo ruido. Ideal para técnicos.</p>
+          <div class="price-row"><span class="price">$ —</span><a class="btn btn-primary wa">Consultar</a></div>
         </article>
-
-        <article class="card product" data-product="Filtro deshidratador 1/4&quot;">
-          <div class="p-img p4"></div>
-          <h3>Filtro deshidratador 1/4"</h3>
-          <p>Para líneas frigoríficas. Rosca estándar.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
-        </article>
-
-        <article class="card product" data-product="Soportes para unidad exterior">
-          <div class="p-img p5"></div>
-          <h3>Soportes para unidad exterior</h3>
-          <p>Kit robusto anticorrosivo, incluye tornillería.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
-        </article>
-
-        <article class="card product" data-product="Tubo de cobre 1/4&quot;">
-          <div class="p-img p6"></div>
-          <h3>Tubo de cobre 1/4"</h3>
-          <p>Rollo para instalaciones de A/A. Calidad frigorífica.</p>
-          <div class="price-row">
-            <span class="price">$ —</span>
-            <a class="btn btn-primary wa">Consultar</a>
-          </div>
-        </article>
-
       </div>
 
-      <p class="muted small">¿Buscás otro repuesto? Escribinos por WhatsApp y lo conseguimos.</p>
+      <p class="muted small">¿No encontrás un repuesto? Escribinos y lo conseguimos.</p>
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="section">
+  <!-- TESTIMONIOS -->
+  <section class="section section-alt">
     <div class="container">
-      <h2>Contacto</h2>
-      <div class="card contact-card">
-        <p><b>WhatsApp:</b> <a target="_blank" href="https://wa.me/543382411473">+54 9 3382 411473</a></p>
-        <p><b>Email:</b> <a href="mailto:aorefrigeraciones@gmail.com">aorefrigeraciones@gmail.com</a></p>
-        <p><b>Instagram:</b> <a target="_blank" href="https://instagram.com/ao.refrigeraciones">@ao.refrigeraciones</a></p>
-        <div class="cta-row">
-          <a class="btn btn-primary" target="_blank"
-             href="https://wa.me/543382411473?text=Hola%20AO%2C%20quisiera%20coordinar%20una%20visita.">💬 Escribir por WhatsApp</a>
-          <a class="btn btn-outline" href="#">Volver arriba</a>
-        </div>
+      <h2>Opiniones de clientes</h2>
+      <div class="grid-3">
+        <article class="card quote"><p>“Excelente servicio, muy prolijos y puntuales.”</p><span>Mariano — Rufino</span></article>
+        <article class="card quote"><p>“Me solucionaron el problema en el día.”</p><span>Alejandra — Venado</span></article>
+        <article class="card quote"><p>“Súper recomendables, muy buena atención.”</p><span>Martín — Laboulaye</span></article>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <!-- MINI BLOG / CONSEJOS -->
+  <section class="section">
+    <div class="container">
+      <h2>Consejos de mantenimiento</h2>
+      <div class="grid-3">
+        <article class="card tip"><h3>Antes del verano</h3><p>Chequeo de filtros y limpieza para mejorar rendimiento.</p></article>
+        <article class="card tip"><h3>Ahorro de energía</h3><p>Mantenimiento preventivo para bajar el consumo.</p></article>
+        <article class="card tip"><h3>Evitar fallas</h3><p>Prácticas simples que prolongan la vida del equipo.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="trabajos" class="section section-alt">
+    <div class="container">
+      <h2>Nuestros trabajos</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item"><img src="/trabajos/trabajo-1.jpg" onerror="this.src='https://placehold.co/800x600?text=Trabajo+1'" alt="Trabajo 1"></figure>
+        <figure class="gallery-item"><img src="/trabajos/trabajo-2.jpg" onerror="this.src='https://placehold.co/800x600?text=Trabajo+2'" alt="Trabajo 2"></figure>
+        <figure class="gallery-item"><img src="/trabajos/trabajo-3.jpg" onerror="this.src='https://placehold.co/800x600?text=Trabajo+3'" alt="Trabajo 3"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA AO -->
+  <section class="section">
+    <div class="container">
+      <h2>Garantía AO</h2>
+      <div class="features">
+        <div class="f-item">🧰 Repuestos originales</div>
+        <div class="f-item">🔧 Garantía por escrito</div>
+        <div class="f-item">💬 Atención directa</div>
+        <div class="f-item">📅 Mantenimiento programado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Quiénes somos</h2>
+      <p class="muted" style="max-width:800px;margin:0 auto">
+        Somos AO Refrigeraciones, un equipo con más de 8 años de experiencia en refrigeración integral.
+        Trabajamos con compromiso, prolijidad y garantía por escrito en Rufino y toda la región.
+        Nos especializamos en instalación de split y cámaras, mantenimiento preventivo y reparación de equipos.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO / MAPA / FOOTER -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-content">
       <div class="brand-col">
-        <div class="badge-logo">AO</div>
+        <img src="/logo-isotipo.png?v=2" alt="AO" class="footer-logo" onerror="this.style.display='none'">
         <div>
-          <strong>AO Refrigeraciones</strong><br/>
-          <span class="muted">Rufino y zona</span>
+          <h3>AO Refrigeraciones</h3>
+          <p>Maestros Rufinense 536, Rufino, Santa Fe</p>
+          <p>📞 3382 411473 · <a href="mailto:aorefrigeraciones@gmail.com">aorefrigeraciones@gmail.com</a></p>
+          <p>
+            <a target="_blank" href="https://instagram.com/ao.refrigeraciones">Instagram</a> ·
+            <a target="_blank" href="https://www.facebook.com/share/17gFcDxork/">Facebook</a>
+          </p>
         </div>
       </div>
-      <div class="muted small">© 2025 AO Refrigeraciones. Todos los derechos reservados.</div>
+      <div class="map-wrap">
+        <iframe title="Mapa AO Refrigeraciones" width="100%" height="220" style="border:0;border-radius:12px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=AO%20Refrigeraciones%20Maestros%20Rufinense%20536%20Rufino%20Santa%20Fe&output=embed"></iframe>
+      </div>
+      <div>
+        <a class="btn btn-primary" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">Contactar por WhatsApp</a>
+      </div>
     </div>
+    <p class="copy">© 2025 AO Refrigeraciones - Todos los derechos reservados</p>
   </footer>
 
+  <!-- Botón flotante WhatsApp -->
+  <a class="wa-fab" target="_blank"
+     href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quisiera%20hacer%20una%20consulta.">💬</a>
+
+  <!-- JS: WhatsApp por producto + fallback de logo si falla -->
   <script>
-    // Derivar a WhatsApp con el nombre del producto
     const PHONE = "543382411473";
     document.querySelectorAll(".product .wa").forEach(btn=>{
       btn.addEventListener("click", e=>{
-        const card = e.target.closest(".product");
-        const name = encodeURIComponent(card.dataset.product || "producto");
-        const url = `https://wa.me/${PHONE}?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20consultar%20por%20${name}.`;
-        window.open(url, "_blank");
+        const name = encodeURIComponent(e.target.closest(".product")?.dataset?.product || "producto");
+        window.open(`https://wa.me/${PHONE}?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20consultar%20por%20${name}.`,"_blank");
       });
     });
+
+    // Si el logo principal falla por cache o nombre, intenta PNG simple
+    const lg = document.getElementById('aoLogo');
+    if (lg) {
+      lg.addEventListener('error', ()=>{ lg.src = '/logo.png?v=3'; });
+    }
   </script>
 </body>
 </html>
