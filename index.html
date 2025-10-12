@@ -1,181 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- ====== METADATOS BÁSICOS ====== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AO Refrigeraciones | Servicio técnico, repuestos y cámaras en Rufino</title>
-  <meta name="description" content="Soluciones en refrigeración para el hogar y el comercio. Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales.">
-  <meta property="og:title" content="AO Refrigeraciones – Servicio técnico y repuestos">
-  <meta property="og:description" content="Refrigeración profesional en Rufino y zona.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="/logo-isotipo.png?v=5" type="image/png">
+  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales en Rufino y zona.">
+  <link rel="icon" href="/logo-isotipo.png" type="image/png" />
 
-  <!-- ====== FUENTES DE MARCA (Montserrat + Lato) ====== -->
+  <!-- Fuentes de marca -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ====== ESTILOS (MODO CLARO) ====== -->
+  <!-- ====== ESTILOS (modo claro, look moderno) ====== -->
   <style>
     :root{
       --ao-blue:#283473;
+      --ao-blue-900:#1F2758;
       --ao-celeste:#A2ECF9;
       --ao-base:#EDF9F9;
       --text:#24222C;
       --muted:#5B6470;
-      --border:#E5E7EB;
-      --white:#FFFFFF;
+      --border:#E7EBF0;
+      --white:#fff;
+      --shadow:0 10px 30px rgba(0,0,0,.06);
       --whatsapp:#25D366;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:#fff;color:var(--text);font-family:Lato,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
     h1,h2,h3{font-family:Montserrat, Lato, Arial, sans-serif;margin:.2rem 0 .6rem}
-    h1{font-size:clamp(28px,5vw,46px);line-height:1.15;color:var(--ao-blue)}
-    h2{font-size:clamp(22px,3.2vw,32px);color:var(--ao-blue)}
-    h3{font-size:20px}
+    h1{font-size:clamp(30px,5vw,48px);line-height:1.15;color:var(--ao-blue)}
+    h2{font-size:clamp(22px,3.2vw,34px);color:var(--ao-blue)}
+    h3{font-size:clamp(18px,2.1vw,22px)}
+    p{line-height:1.55}
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    .section{padding:56px 0}
-    .section-alt{background:var(--ao-base)}
+    .container{max-width:1180px;margin:0 auto;padding:0 20px}
+    .section{padding:70px 0}
+    .section-tight{padding:46px 0}
     .lead{color:var(--muted);font-size:1.08rem}
-
-    /* ===== HEADER / NAV ===== */
-    .site-header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-    .brand .logo{height:44px;width:auto}
-    .links{display:flex;gap:16px;align-items:center;font-weight:700}
-    .links a{color:var(--ao-blue)}
-    .links a:hover{opacity:.8}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.7rem 1.05rem;font-weight:800;border:1px solid transparent;cursor:pointer}
+    .muted{color:var(--muted)}
+    .card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.8rem 1.2rem;font-weight:800;border:1px solid transparent;cursor:pointer}
     .btn-primary{background:var(--ao-blue);color:#fff}
     .btn-outline{background:#fff;border:1px solid var(--border)}
     .btn-green{background:var(--whatsapp);color:#fff}
+    .btn-small{padding:.55rem .9rem;font-weight:700;border-radius:12px}
 
-    /* ===== HERO ===== */
-    .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
-    .soft{box-shadow:0 10px 30px rgba(0,0,0,.05)}
-    .dashed{border-style:dashed}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 0;padding:0;list-style:none}
-    .kpis li{border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
-    .kpis strong{font-size:1.05rem;color:var(--ao-blue)}
-    .kpis span{display:block;color:var(--muted);font-size:.9rem}
-    .placeholder{height:260px;display:grid;place-items:center;border:2px dashed #c9d4de;color:#7a8a99;border-radius:14px;background:linear-gradient(180deg,#fff,#f7fcfd)}
+    /* ==== Header */
+    .site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .brand .logo{height:44px;width:auto}
+    .menu{display:flex;gap:18px;align-items:center;font-weight:800}
+    .menu a{color:var(--ao-blue)}
+    .menu a:hover{opacity:.85}
 
-    /* ===== QUIÉNES SOMOS ===== */
-    .who{background:var(--ao-base)}
-    .who .who-box{max-width:880px;margin:0 auto}
-    .who .who-sub{margin-top:.4rem;color:var(--muted);font-size:1rem}
+    /* ==== Hero */
+    .hero{background:linear-gradient(180deg,#F8FEFF,#F4FBFE)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+    .hero-photo{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,52,115,.08),transparent)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 0;padding:0;list-style:none}
+    .kpis li{border:1px solid var(--border);border-radius:14px;padding:12px;text-align:center;background:#fff}
+    .kpis strong{color:var(--ao-blue)}
+    .kpis span{display:block;color:var(--muted);font-size:.95rem}
 
-    /* ===== SERVICIOS ===== */
+    /* ==== Bloque valores */
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .value{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+    .value b{color:var(--ao-blue)}
+
+    /* ==== Quienes */
+    .q-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+    .q-foto{border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+
+    /* ==== Servicios */
     .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .service{display:flex;flex-direction:column;gap:6px}
     .service p{color:var(--muted)}
-    .service.soon p{font-style:italic}
 
-    /* ===== GARANTÍA AO ===== */
-    .section-guarantee{background:var(--ao-celeste)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .f-item{border:1px solid rgba(255,255,255,.7);background:#fff;border-radius:12px;padding:12px;text-align:center;font-weight:700}
+    /* ==== Inelro */
+    .inelro{background:linear-gradient(180deg,#20306B,#1B265A);color:#fff}
+    .inelro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
+    .inelro .ticks{margin:.6rem 0 1rem;padding-left:18px}
+    .inelro .ticks li{margin:.35rem 0}
 
-    /* ===== INELRO ===== */
-    .section-inelro{background:var(--ao-blue);color:#fff}
-    .inelro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
-    .ticks{margin:.6rem 0 1rem;padding-left:18px}
-    .ticks li{margin:.35rem 0}
+    /* ==== Tienda */
+    .notice{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:-8px auto 18px;padding:.75rem 1rem;max-width:900px;background:linear-gradient(180deg,#f5fbff,#eef7ff);border:1px solid #d7e6ff;color:#0b2a5b;border-radius:999px;font-weight:800}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 18px}
+    .chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:.6rem 1rem;cursor:pointer;font-weight:800}
+    .chip.active{background:var(--ao-blue);color:#fff;border-color:transparent}
+    .search{flex:1 1 260px;display:flex}
+    .search input{width:100%;border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .product-card{border:1px solid var(--border);border-radius:14px;background:#fff;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow)}
+    .p-img{width:100%;height:170px;object-fit:cover;border-radius:10px;border:1px solid var(--border);background:#f6f9ff}
+    .p-name{font-weight:900}
+    .p-desc{color:var(--muted);font-size:.95rem}
+    .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+    .price{font-weight:900}
 
-    /* ===== BLOG AO ===== */
-    .blog{background:var(--ao-celeste)}
+    /* ==== Trabajos */
+    .gallery{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:18px}
+    .gallery figure{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+
+    /* ==== Blog */
+    .blog{background:var(--ao-base)}
     .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .blog .card p{color:var(--muted)}
 
-    /* ===== TIENDA ===== */
-    .notice{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:-10px auto 16px;padding:.7rem 1rem;max-width:780px;background:linear-gradient(180deg,#f5fbff,#eef7ff);border:1px solid #d7e6ff;color:#0b2a5b;border-radius:999px;font-weight:700}
-    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 18px}
-    .chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:.5rem .9rem;cursor:pointer;font-weight:700}
-    .chip.active{background:var(--ao-blue);color:#fff;border-color:transparent}
-    .search{flex:1 1 240px;display:flex}
-    .search input{width:100%;border:1px solid var(--border);border-radius:10px;padding:.6rem .8rem}
-    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .product-card{border:1px solid var(--border);border-radius:12px;background:#fff;padding:14px;display:flex;flex-direction:column;gap:8px}
-    .p-img{width:100%;height:160px;object-fit:cover;border-radius:10px;border:1px solid var(--border);background:#f6f9ff}
-    .p-name{font-weight:800}
-    .p-desc{color:var(--muted);font-size:.95rem}
-    .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-    .price{font-weight:800}
-    .p-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .btn.small{padding:.5rem .8rem;font-weight:700}
-
-    /* ===== TRABAJOS / GALERÍA ===== */
-    .gallery{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:18px}
-    .gallery figure{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
-
-    /* ===== OPINIONES (FINAL) ===== */
+    /* ==== Opiniones */
     .testis{background:var(--ao-celeste)}
-    .slider-wrap{position:relative;overflow:hidden;border-radius:14px}
+    .slider-wrap{position:relative;overflow:hidden;border-radius:16px}
     .slider{display:flex;gap:16px;transition:transform .35s ease;padding:4px}
     .quote.card p{font-style:italic}
-    .slide-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(40,52,115,.9);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer}
+    .slide-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(40,52,115,.92);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer}
     .slide-btn.prev{left:8px}.slide-btn.next{right:8px}
 
-    /* ===== FOOTER ===== */
+    /* ==== Footer */
     .footer{background:var(--ao-blue);color:#fff;padding:38px 0}
-    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr auto;gap:16px;align-items:center}
-    .footer .socials{display:flex;gap:12px;align-items:center}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr auto;gap:18px;align-items:center}
     .icon-btn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#ffffff10;border:1px solid #ffffff40}
-    .copy{text-align:center;margin-top:16px;opacity:.9}
-    .map iframe{width:100%;height:220px;border:0;border-radius:12px}
 
-    /* ===== WHATSAPP FLOTANTE ===== */
+    /* ==== WhatsApp FAB */
     .wa-fab{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--whatsapp);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:70}
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .blog-grid{grid-template-columns:1fr}
-      .products{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-      .links{display:none}
+    /* ==== Responsive */
+    @media (max-width:980px){
+      .menu{display:none}
+      .hero-grid,.q-grid,.inelro-grid{grid-template-columns:1fr}
+      .grid-3,.products,.blog-grid,.gallery{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-  <!-- ====== HEADER Y MENÚ ====== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="/" aria-label="AO Refrigeraciones - Inicio">
-        <img id="aoLogo" class="logo" src="/logo-horizontal.png?v=5" alt="AO Refrigeraciones">
+        <img id="aoLogo" class="logo" src="/logo-horizontal.png" alt="AO Refrigeraciones">
       </a>
-      <nav class="links" aria-label="Principal">
+      <nav class="menu" aria-label="Principal">
         <a href="#quienes">¿Quiénes somos?</a>
         <a href="#servicios">Servicios</a>
-        <a href="#blog">Blog AO</a>
         <a href="#tienda">Tienda</a>
-        <a href="#trabajos">Nuestros trabajos</a>
-        <a href="#opiniones">Opiniones</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#blog">Blog AO</a>
         <a href="#contacto">Contacto</a>
         <a class="btn btn-green" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">
-          <!-- Ícono WhatsApp -->
-          <svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><path d="M19.11 17.39c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.07-.12-.25-.2-.52-.34z" fill="#fff"></path><path d="M26.6 5.4C23.9 2.7 20.2 1.3 16.3 1.3 8.8 1.3 2.9 7.2 2.9 14.7c0 2.3.6 4.6 1.8 6.6L2 30l8.8-2.3c1.9 1 4.1 1.5 6.2 1.5h0c7.5 0 13.4-5.9 13.4-13.4 0-3.6-1.4-7.2-4.1-9.9zM16.9 27.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-5.2 1.4 1.4-5.1-.2-.4c-1.1-1.6-1.6-3.5-1.6-5.5 0-5.6 4.6-10.2 10.2-10.2 2.7 0 5.3 1.1 7.2 3.1 1.9 1.9 3 4.5 3 7.2 0 5.7-4.6 10.2-10.1 10.2z" fill="#fff"></path></svg>
           WhatsApp
         </a>
       </nav>
     </div>
   </header>
 
-  <!-- ====== HERO PRINCIPAL ====== -->
+  <!-- ===== HERO ===== -->
   <section class="hero section">
     <div class="container hero-grid">
-      <div class="card soft">
+      <div class="card">
         <h1>Soluciones en refrigeración para el hogar y el comercio</h1>
         <p class="lead">
           Instalación, mantenimiento y reparación de <b>aires acondicionados</b> y <b>cámaras frigoríficas</b>.<br>
           Servicio técnico para equipos <b>familiares y comerciales</b>.
         </p>
-        <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:.6rem">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:.6rem">
           <a class="btn btn-primary" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20coordinar%20una%20visita.">Pedir turno</a>
           <a class="btn btn-outline" href="#tienda">Ver tienda</a>
         </div>
@@ -185,92 +174,81 @@
           <li><strong>24–48 h</strong><span>turnos rápidos</span></li>
         </ul>
       </div>
-      <div class="card dashed"><div class="placeholder">Subí <code>banner.jpg</code> (1600×900)</div></div>
+      <div class="hero-photo">
+        <!-- Subí /banner.jpg (1600x900 aprox). Si no existe, se ve placeholder -->
+        <img src="/banner.jpg" onerror="this.src='https://placehold.co/1600x900?text=Foto+del+taller+%2F+instalaci%C3%B3n'" alt="AO Refrigeraciones - taller y trabajos">
+      </div>
     </div>
   </section>
 
-  <!-- ====== QUIÉNES SOMOS ====== -->
-  <section id="quienes" class="section who">
-    <div class="container who-box">
-      <h2>¿Quiénes somos?</h2>
-      <p class="who-sub">
-        Somos AO Refrigeraciones, un equipo con sólida experiencia en refrigeración integral.
-        Nos especializamos en instalación de aires y cámaras, mantenimiento preventivo y reparación de equipos.
-        <br><b>Ofrecemos asesoramiento personalizado</b> para ayudarte a encontrar la mejor solución en cada caso.
-      </p>
+  <!-- ===== VALORES CORTOS ===== -->
+  <section class="section-tight">
+    <div class="container values">
+      <div class="value"><b>🧰 Repuestos originales</b><br><span class="muted">De fábrica</span></div>
+      <div class="value"><b>🔧 Trabajos garantizados</b><br><span class="muted">Calidad y seguridad</span></div>
+      <div class="value"><b>💬 Atención personalizada</b><br><span class="muted">Te asesoramos</span></div>
     </div>
   </section>
 
-  <!-- ====== SERVICIOS ====== -->
-  <section id="servicios" class="section">
+  <!-- ===== QUIENES SOMOS ===== -->
+  <section id="quienes" class="section">
+    <div class="container q-grid">
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p class="muted">
+          Somos AO Refrigeraciones, un equipo con <b>sólida experiencia</b> en instalación de aires acondicionados
+          y cámaras frigoríficas, mantenimiento preventivo y reparación de equipos. <br>
+          <b>Ofrecemos asesoramiento personalizado</b> para que elijas la solución justa para tu casa o comercio.
+        </p>
+      </div>
+      <div class="q-foto">
+        <img src="/quienes.jpg" onerror="this.src='https://placehold.co/1000x700?text=Equipo+AO+%7C+Foto'" alt="Equipo AO Refrigeraciones">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section id="servicios" class="section" aria-labelledby="servicios-title">
     <div class="container">
-      <h2>Nuestros servicios</h2>
+      <h2 id="servicios-title">Nuestros servicios</h2>
       <div class="grid-3">
         <article class="card service"><h3>Instalación de aires acondicionados</h3><p>Montaje prolijo, vacío correcto y prueba de rendimiento.</p></article>
-        <article class="card service"><h3>Mantenimiento y reparación de aires acondicionados</h3><p>Limpieza profunda, control eléctrico y carga de gas si hace falta.</p></article>
+        <article class="card service"><h3>Mantenimiento y reparación</h3><p>Limpieza profunda, control eléctrico y carga de gas si hace falta.</p></article>
         <article class="card service"><h3>Reparación de equipos familiares</h3><p>Diagnóstico y reemplazo de componentes con verificación final.</p></article>
         <article class="card service"><h3>Reparación de equipos comerciales</h3><p>Heladeras, freezers y equipos de mayor capacidad.</p></article>
-        <article class="card service"><h3>Cámaras frigoríficas (instalación, mantenimiento y reparación)</h3><p>Soluciones completas para comercios e industrias.</p></article>
-        <article class="card service"><h3>Mantenimiento preventivo mensual</h3><p>Planes programados para evitar fallas y ahorrar energía.</p></article>
-        <article class="card service soon"><h3>Refrigeración para transporte</h3><p>Próximamente</p></article>
+        <article class="card service"><h3>Cámaras frigoríficas</h3><p>Instalación, mantenimiento y reparación para comercios e industria.</p></article>
+        <article class="card service"><h3>Mantenimiento preventivo</h3><p>Planes programados para evitar fallas y ahorrar energía.</p></article>
+        <article class="card service"><h3>Refrigeración para transporte</h3><p><i>Próximamente</i></p></article>
       </div>
     </div>
   </section>
 
-  <!-- ====== GARANTÍA AO ====== -->
-  <section class="section section-guarantee">
-    <div class="container">
-      <h2>Nuestra garantía AO</h2>
-      <div class="features">
-        <div class="f-item">🧰 Repuestos originales</div>
-        <div class="f-item">🔧 Trabajos garantizados</div>
-        <div class="f-item">💬 Atención personalizada</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SERVICIO TÉCNICO OFICIAL INELRO ====== -->
-  <section class="section section-inelro">
+  <!-- ===== INELRO ===== -->
+  <section class="section inelro" aria-labelledby="inelro-title">
     <div class="container inelro-grid">
       <div>
-        <h2>Servicio Técnico Oficial INELRO</h2>
+        <h2 id="inelro-title" style="color:#fff">Servicio Técnico Oficial INELRO</h2>
         <ul class="ticks">
           <li>Repuestos <b>100% originales</b> de INELRO</li>
           <li>Atendemos <b>reclamos de garantía</b> y servicios <b>fuera de garantía</b></li>
           <li><b>Rufino y zona</b></li>
           <li>Vendemos <b>repuestos originales INELRO</b> disponibles a pedido</li>
         </ul>
-        <a class="btn btn-light" target="_blank" href="https://wa.me/543382411473?text=Quiero%20servicio%20oficial%20INELRO">Solicitar servicio oficial INELRO</a>
+        <a class="btn btn-outline" style="color:#fff;border-color:#ffffff80" target="_blank" href="https://wa.me/543382411473?text=Quiero%20servicio%20oficial%20INELRO">Solicitar servicio INELRO</a>
       </div>
-      <div class="card"><div class="placeholder" style="background:linear-gradient(180deg,#f9fbff,#eef5ff)">Subí <code>inelro-logo.png</code></div></div>
-    </div>
-  </section>
-
-  <!-- ====== BLOG AO ====== -->
-  <section id="blog" class="section blog">
-    <div class="container">
-      <h2>Blog AO · Consejos y mantenimiento</h2>
-      <p class="lead">Todo lo que necesitás saber para cuidar tus equipos y ahorrar energía.</p>
-      <div class="blog-grid">
-        <article class="card"><h3>Cómo ahorrar energía con tu aire acondicionado</h3><p>Usalo a 24 °C, limpiá filtros y aprovechá el modo Dry en días húmedos.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
-        <article class="card"><h3>Cuándo hacer el mantenimiento preventivo</h3><p>Antes del verano/invierno evitás fallas, bajás consumo y alargás la vida útil.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
-        <article class="card"><h3>Qué revisar antes del verano</h3><p>Probalo con anticipación y chequeá caños, drenaje y rendimiento.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
-        <article class="card"><h3>Por qué tu heladera no enfría bien</h3><p>Burletes, drenaje y nivelación: lo que más suele fallar.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
-        <article class="card"><h3>Cómo limpiar los filtros del aire</h3><p>Una limpieza cada 30 días mejora rendimiento y calidad de aire.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
-        <article class="card"><h3>Errores comunes que suben el consumo</h3><p>Termostato a 17 °C, filtros sucios y unidad exterior a pleno sol.</p><a class="btn btn-outline small" href="#blog">Leer más</a></article>
+      <div class="card" style="display:grid;place-items:center;background:#fff">
+        <img src="/inelro-logo.png" class="inelro-logo" alt="INELRO - Servicio Técnico Oficial" onerror="this.closest('.card').innerHTML='<div style=&quot;padding:60px;text-align:center;color:#667&quot;>Subí <code>inelro-logo.png</code></div>';">
       </div>
     </div>
   </section>
 
-  <!-- ====== TIENDA (PRODUCTOS Y FILTROS) ====== -->
-  <section id="tienda" class="section">
+  <!-- ===== TIENDA ===== -->
+  <section id="tienda" class="section" aria-labelledby="tienda-title">
     <div class="container">
-      <div class="notice">🚚 Envíos a todo el país · Consultá por stock · 💬 Te asesoramos para elegir el repuesto correcto</div>
-      <h2>Tienda AO Refrigeraciones</h2>
-
-      <!-- Controles: filtros por categoría + buscador -->
+      <div class="notice">🚚 Envíos a todo el país · Consultá por stock · 💬 Asesoramiento personalizado</div>
+      <h2 id="tienda-title">Tienda AO Refrigeraciones</h2>
       <div class="controls">
-        <div class="chips">
+        <div>
           <button class="chip active" data-filter="Todos">Todos</button>
           <button class="chip" data-filter="Insumos">Insumos</button>
           <button class="chip" data-filter="Repuestos">Repuestos</button>
@@ -278,16 +256,14 @@
         </div>
         <div class="search"><input id="searchInput" type="search" placeholder="Buscar producto..."></div>
       </div>
-
-      <!-- Grilla de productos (se llena por JS) -->
       <div id="productGrid" class="products"></div>
     </div>
   </section>
 
-  <!-- ====== NUESTROS TRABAJOS (GALERÍA) ====== -->
-  <section id="trabajos" class="section section-alt">
+  <!-- ===== TRABAJOS ===== -->
+  <section id="trabajos" class="section" aria-labelledby="trabajos-title" style="background:var(--ao-base)">
     <div class="container">
-      <h2>Así trabajamos</h2>
+      <h2 id="trabajos-title">Nuestros trabajos</h2>
       <div class="gallery">
         <figure><img src="/trabajos/trabajo-1.jpg" onerror="this.src='https://placehold.co/800x600?text=Trabajo+1'" alt="Trabajo 1"></figure>
         <figure><img src="/trabajos/trabajo-2.jpg" onerror="this.src='https://placehold.co/800x600?text=Trabajo+2'" alt="Trabajo 2"></figure>
@@ -296,112 +272,103 @@
     </div>
   </section>
 
-  <!-- ====== OPINIONES DE CLIENTES (AL FINAL) ====== -->
-  <section id="opiniones" class="section testis">
+  <!-- ===== BLOG ===== -->
+  <section id="blog" class="section blog" aria-labelledby="blog-title">
     <div class="container">
-      <h2>Opiniones de nuestros clientes</h2>
+      <h2 id="blog-title">Blog AO · Consejos y mantenimiento</h2>
+      <div class="blog-grid">
+        <article class="card"><h3>Cómo ahorrar energía con tu aire acondicionado</h3><p>Usalo a 24 °C, limpiá filtros y aprovechá el modo Dry en días húmedos.</p><a class="btn btn-outline btn-small" href="#blog">Leer más</a></article>
+        <article class="card"><h3>Cuándo hacer el mantenimiento preventivo</h3><p>Antes del verano/invierno evitás fallas, bajás consumo y alargás la vida útil.</p><a class="btn btn-outline btn-small" href="#blog">Leer más</a></article>
+        <article class="card"><h3>Qué revisar antes del verano</h3><p>Probalo con anticipación y chequeá caños, drenaje y rendimiento.</p><a class="btn btn-outline btn-small" href="#blog">Leer más</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OPINIONES (al final) ===== -->
+  <section id="opiniones" class="section testis" aria-labelledby="opiniones-title">
+    <div class="container">
+      <h2 id="opiniones-title">Opiniones de nuestros clientes</h2>
       <div class="slider-wrap">
         <button class="slide-btn prev" aria-label="Anterior">‹</button>
         <div class="slider" aria-live="polite">
-          <article class="card quote"><p>“Excelente atención y trabajo prolijo. Me dejaron el aire como nuevo. Súper recomendables.”</p><span>Laura — Rufino</span></article>
+          <article class="card quote"><p>“Excelente atención y trabajo prolijo. Me dejaron el aire como nuevo.”</p><span>Laura — Rufino</span></article>
           <article class="card quote"><p>“Muy buena predisposición y rapidez. Los llamé un sábado y vinieron enseguida.”</p><span>Julián — Rufino</span></article>
-          <article class="card quote"><p>“Unos genios! Les escribí por WhatsApp y al rato ya tenía turno. Todo rápido y sin vueltas.”</p><span>Lucía — Rufino</span></article>
-          <article class="card quote"><p>“Me gustó la prolijidad del trabajo y la amabilidad.”</p><span>Nicolás — Rufino</span></article>
-          <article class="card quote"><p>“Excelente servicio técnico. Te explican todo y te dan garantía.”</p><span>Ana — Rufino</span></article>
-          <article class="card quote"><p>“Instalaron el aire y quedó perfecto. Muy buena atención.”</p><span>Cristian — Rufino</span></article>
+          <article class="card quote"><p>“Unos genios! Les escribí por WhatsApp y al rato ya tenía turno.”</p><span>Lucía — Rufino</span></article>
+          <article class="card quote"><p>“Trabajo prolijo y amabilidad. Recomendados.”</p><span>Nicolás — Rufino</span></article>
         </div>
         <button class="slide-btn next" aria-label="Siguiente">›</button>
       </div>
     </div>
   </section>
 
-  <!-- ====== FOOTER Y REDES ====== -->
+  <!-- ===== FOOTER ===== -->
   <footer id="contacto" class="footer">
     <div class="container footer-grid">
-      <div style="display:flex;gap:12px;align-items:center">
-        <img src="/logo-isotipo.png?v=5" alt="AO" style="width:48px;height:48px;border-radius:8px;background:#fff;padding:4px">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <img src="/logo-isotipo.png" alt="AO" style="width:48px;height:48px;border-radius:8px;background:#fff;padding:4px">
         <div>
           <h3 style="margin:0 0 .2rem 0">AO Refrigeraciones</h3>
           <p style="margin:.2rem 0">Maestros Rufinense 536, Rufino, Santa Fe</p>
           <p style="margin:.2rem 0">📞 3382 411473 · <a href="mailto:aorefrigeraciones@gmail.com" style="text-decoration:underline;color:#fff">aorefrigeraciones@gmail.com</a></p>
-          <p style="margin:.2rem 0">Seguinos en redes:</p>
-          <div class="socials">
+          <div style="display:flex;gap:10px;margin-top:8px">
             <a class="icon-btn" target="_blank" aria-label="Instagram" href="https://instagram.com/ao.refrigeraciones" title="Instagram">
-              <!-- ícono Instagram -->
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm12 1a1 1 0 100 2 1 1 0 000-2zM12 7a5 5 0 100 10 5 5 0 000-10z"></path></svg>
             </a>
             <a class="icon-btn" target="_blank" aria-label="Facebook" href="https://www.facebook.com/share/17gFcDxork/" title="Facebook">
-              <!-- ícono Facebook -->
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0022 12"></path></svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="map">
-        <iframe title="Mapa AO Refrigeraciones" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=AO%20Refrigeraciones%20Maestros%20Rufinense%20536%20Rufino%20Santa%20Fe&output=embed"></iframe>
+      <div>
+        <iframe title="Mapa AO Refrigeraciones" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=AO%20Refrigeraciones%20Maestros%20Rufinense%20536%20Rufino%20Santa%20Fe&output=embed" style="width:100%;height:230px;border:0;border-radius:12px"></iframe>
       </div>
       <div>
         <a class="btn btn-primary" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">Contactar por WhatsApp</a>
       </div>
     </div>
-    <p class="copy">© 2025 AO Refrigeraciones - Todos los derechos reservados</p>
+    <p style="text-align:center;margin-top:18px;opacity:.9">© 2025 AO Refrigeraciones - Todos los derechos reservados</p>
   </footer>
 
-  <!-- ====== WHATSAPP FLOTANTE ====== -->
+  <!-- FAB WhatsApp -->
   <a class="wa-fab" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quisiera%20hacer%20una%20consulta." aria-label="WhatsApp">
     <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M19.11 17.39c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.07-.12-.25-.2-.52-.34z" fill="#fff"></path><path d="M26.6 5.4C23.9 2.7 20.2 1.3 16.3 1.3 8.8 1.3 2.9 7.2 2.9 14.7c0 2.3.6 4.6 1.8 6.6L2 30l8.8-2.3c1.9 1 4.1 1.5 6.2 1.5h0c7.5 0 13.4-5.9 13.4-13.4 0-3.6-1.4-7.2-4.1-9.9zM16.9 27.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-5.2 1.4 1.4-5.1-.2-.4c-1.1-1.6-1.6-3.5-1.6-5.5 0-5.6 4.6-10.2 10.2-10.2 2.7 0 5.3 1.1 7.2 3.1 1.9 1.9 3 4.5 3 7.2 0 5.7-4.6 10.2-10.1 10.2z" fill="#fff"></path></svg>
   </a>
 
-  <!-- ====== DATOS DE PRODUCTOS (desde tu Excel) ======
-       Subí las imágenes a /productos/ con el nombre sugerido en "image".
-       Precio por ahora $0. No se muestran códigos. -->
+  <!-- ====== DATA DE PRODUCTOS ======
+       Subí imágenes a /productos/ con el nombre sugerido en "image".
+       Precio $0 por ahora. No mostramos códigos. -->
   <script id="product-data" type="application/json">
   {
     "order": ["Insumos","Repuestos","Herramientas","Otros"],
     "items": [
-      {"name":"Kit de instalacion 1/4 y 1/2 x 3  metros con mensula","description":"Caño de cobre 1/2 x 3 metros - Caño de 1/4 x 3 metros -  Aislacion 5/8” x 3 metros  - Aislación 1/4” x 3 metros - Soporte 4500 - Ménsula universal 4500 frigorías - Tuercas - 5/8” x 3 metros - Cinta De PVC Sin Adhesivo - Tapa agujero","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros-con-mensula.jpg"},
-      {"name":"Kit de instalacion 1/4 y 1/2 x 3  metros","description":"Caño de cobre 1/2 x 3 metros - Caño de 1/4 x 3 metros -  Aislacion 5/8” x 3 metros  - Aislación 1/4” x 3 metros - Soporte 4500 - Ménsula universal 4500 frigorías - Tuercas - 5/8” x 3 metros - Cinta De PVC Sin Adhesivo - Tapa agujero","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros.jpg"},
-      {"name":"Kit de instalacion 1/4 y 1/2 x 3  metros con mensula","description":"Caño de cobre 1/2 x 3 metros - Caño de 1/4 x 3 metros -  Aislacion 5/8” x 3 metros  - Aislación 1/4” x 3 metros - Soporte 4500 - Ménsula universal 4500 frigorías - Tuercas - 5/8” x 3 metros - Cinta De PVC Sin Adhesivo - Tapa agujero","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros-con-mensula.jpg"},
-      {"name":"Kit de instalacion 1/4 y 1/2 x 3  metros","description":"Caño de cobre 1/2 x 3 metros - Caño de 1/4 x 3 metros -  Aislacion 5/8” x 3 metros  - Aislación 1/4” x 3 metros - Soporte 4500 - Ménsula universal 4500 frigorías - Tuercas - 5/8” x 3 metros - Cinta De PVC Sin Adhesivo - Tapa agujero","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros.jpg"},
+      {"name":"Kit de instalación 1/4 y 1/2 x 3 m con ménsula","description":"Caños y aislaciones + ménsula 4500. Incluye accesorios.","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros-con-mensula.jpg"},
+      {"name":"Kit de instalación 1/4 y 1/2 x 3 m","description":"Caños de cobre 1/2 y 1/4 x 3 m + aislaciones y accesorios.","category":"Insumos","price":0,"image":"/productos/kit-de-instalacion-1-4-y-1-2-x-3-metros.jpg"},
       {"name":"Caño de cobre 1/4","description":"","category":"Insumos","price":0,"image":"/productos/cano-de-cobre-1-4.jpg"},
-      {"name":"Caño de cobre 3/8","description":"","category":"Insumos","price":0,"image":"/productos/cano-de-cobre-3-8.jpg"},
-      {"name":"Caño de cobre 1/2","description":"","category":"Insumos","price":0,"image":"/productos/cano-de-cobre-1-2.jpg"},
-      {"name":"Aislacion 3/8","description":"","category":"Insumos","price":0,"image":"/productos/aislacion-3-8.jpg"},
-      {"name":"Aislacion 1/2","description":"","category":"Insumos","price":0,"image":"/productos/aislacion-1-2.jpg"},
-      {"name":"Aislacion 5/8","description":"","category":"Insumos","price":0,"image":"/productos/aislacion-5-8.jpg"},
-      {"name":"Cinta  de PVC sin adhesivo","description":"","category":"Insumos","price":0,"image":"/productos/cinta-de-pvc-sin-adhesivo.jpg"},
-      {"name":"Cubre  caña 5/8 por 2 metros","description":"Marca Poliart - Blanco","category":"Insumos","price":0,"image":"/productos/cubre-cana-5-8-por-2-metros.jpg"},
-      {"name":"Cubre caña 3/4 por 2 metro","description":"Marca Poliart - Blanco","category":"Insumos","price":0,"image":"/productos/cubre-cana-3-4-por-2-metro.jpg"},
-      {"name":"Tapa agujeros","description":"Marca Poliart - Blanco","category":"Insumos","price":0,"image":"/productos/tapa-agujeros.jpg"},
-      {"name":"Zapatillas alargues","description":"De 1,5 metros - 10 A","category":"Insumos","price":0,"image":"/productos/zapatillas-alargues.jpg"},
-      {"name":"Aspiradora","description":"12 L - 1200 W - seco/húmedo","category":"Herramientas","price":0,"image":"/productos/aspiradora.jpg"},
-      {"name":"Liquido limpia evaporadores","description":"Desengrasante","category":"Insumos","price":0,"image":"/productos/liquido-limpia-evaporadores.jpg"},
-      {"name":"Fijadores epoxi 1kg","description":"Resina epoxi - Alta resistencia","category":"Insumos","price":0,"image":"/productos/fijadores-epoxi-1kg.jpg"},
-      {"name":"Cinta de aluminio","description":"","category":"Insumos","price":0,"image":"/productos/cinta-de-aluminio.jpg"},
+      {"name":"Aislación 5/8","description":"","category":"Insumos","price":0,"image":"/productos/aislacion-5-8.jpg"},
+      {"name":"Cubre caña 3/4 (2 m)","description":"Poliart · Blanco","category":"Insumos","price":0,"image":"/productos/cubre-cana-3-4-por-2-metro.jpg"},
       {"name":"Termostato universal","description":"Compatible con heladeras familiares","category":"Repuestos","price":0,"image":"/productos/termostato-universal.jpg"},
-      {"name":"Capacitor 3uf","description":"","category":"Repuestos","price":0,"image":"/productos/capacitor-3uf.jpg"},
-      {"name":"Capacitor 25uf","description":"","category":"Repuestos","price":0,"image":"/productos/capacitor-25uf.jpg"},
-      {"name":"Capacitor 35uf","description":"","category":"Repuestos","price":0,"image":"/productos/capacitor-35uf.jpg"},
-      {"name":"Capacitor 40uf","description":"","category":"Repuestos","price":0,"image":"/productos/capacitor-40uf.jpg"}
+      {"name":"Capacitor 25 µF","description":"","category":"Repuestos","price":0,"image":"/productos/capacitor-25uf.jpg"},
+      {"name":"Aspiradora 12 L 1200 W","description":"Seco/húmedo","category":"Herramientas","price":0,"image":"/productos/aspiradora.jpg"}
     ]
   }
   </script>
 
-  <!-- ====== SCRIPTS: tienda, buscador, carrusel y utilidades ====== -->
+  <!-- ====== SCRIPTS (tienda, buscador, carrusel, utilidades) ====== -->
   <script>
     const PHONE = "543382411473";
 
-    // ===== Render de TIENDA con filtros y buscador =====
+    // Logo fallback
+    const lg = document.getElementById('aoLogo');
+    if (lg) lg.addEventListener('error', ()=>{ lg.src = '/logo.png'; });
+
+    // ===== TIENDA =====
     const data = JSON.parse(document.getElementById('product-data').textContent);
     const order = data.order || ["Insumos","Repuestos","Herramientas","Otros"];
     const items = data.items || [];
-
-    // Orden por categoría: Insumos -> Repuestos -> Herramientas -> Otros
     const sorted = [...items].sort((a,b)=>{
-      const ia = order.indexOf(a.category)||99;
-      const ib = order.indexOf(b.category)||99;
-      if (ia!==ib) return ia-ib;
-      return (a.name||"").localeCompare(b.name||"");
+      const ia = order.indexOf(a.category); const ib = order.indexOf(b.category);
+      if (ia!==ib) return ia-ib; return (a.name||"").localeCompare(b.name||"");
     });
 
     const grid = document.getElementById('productGrid');
@@ -410,18 +377,17 @@
 
     function cardHTML(p){
       const img = p.image || 'https://placehold.co/600x400?text=Producto';
-      const safeImg = img;
-      const desc = p.description ? p.description : '';
+      const desc = p.description ? `<div class="p-desc">${p.description}</div>` : ``;
       return `
         <article class="product-card" data-category="${p.category}">
-          <img class="p-img" src="${safeImg}" onerror="this.src='https://placehold.co/600x400?text=${encodeURIComponent(p.name||'Producto')}'" alt="${p.name||'Producto'}">
+          <img class="p-img" src="${img}" onerror="this.src='https://placehold.co/600x400?text=${encodeURIComponent(p.name||'Producto')}'" alt="${p.name||'Producto'}">
           <div class="p-name">${p.name||''}</div>
-          ${desc ? `<div class="p-desc">${desc}</div>` : ``}
+          ${desc}
           <div class="price-row">
             <span class="price">$ 0</span>
-            <div class="p-actions">
-              <a class="btn btn-outline small" href="#" onclick="alert('Vista de detalle disponible en la próxima etapa.');return false;">Ver detalle</a>
-              <a class="btn btn-primary small" target="_blank" href="https://wa.me/${PHONE}?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20consultar%20por%20${encodeURIComponent(p.name||'un producto')}">Consultar</a>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn btn-outline btn-small" href="#" onclick="alert('Vista de detalle disponible en la próxima etapa.');return false;">Ver detalle</a>
+              <a class="btn btn-primary btn-small" target="_blank" href="https://wa.me/${PHONE}?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20consultar%20por%20${encodeURIComponent(p.name||'un producto')}">Consultar</a>
             </div>
           </div>
         </article>
@@ -430,12 +396,10 @@
 
     function render(filter="Todos", query=""){
       const q = (query||"").toLowerCase().trim();
-      const html = sorted
+      grid.innerHTML = sorted
         .filter(p => filter==="Todos" ? true : (p.category===filter))
         .filter(p => !q || (p.name && p.name.toLowerCase().includes(q)) || (p.description && p.description.toLowerCase().includes(q)))
-        .map(cardHTML)
-        .join('');
-      grid.innerHTML = html || `<p class="muted">No se encontraron productos para tu búsqueda.</p>`;
+        .map(cardHTML).join('') || `<p class="muted">No se encontraron productos.</p>`;
     }
 
     chips.forEach(ch=>{
@@ -445,27 +409,19 @@
         render(ch.dataset.filter, searchInput.value);
       });
     });
-
-    searchInput.addEventListener('input', ()=> {
+    searchInput.addEventListener('input', ()=>{
       const current = document.querySelector('.chip.active')?.dataset.filter || "Todos";
       render(current, searchInput.value);
     });
-
-    // Primera render
     render("Todos","");
 
-    // ===== Carrusel simple de Opiniones =====
+    // ===== Carrusel Opiniones =====
     (function(){
       const slider = document.querySelector('.slider');
       if(!slider) return;
       let idx = 0;
-      const cards = slider.children;
-      const total = cards.length;
-      const go = (dir) => {
-        idx = (idx + dir + total) % total;
-        const w = cards[0].getBoundingClientRect().width + 16; // card + gap
-        slider.style.transform = `translateX(${-idx * w}px)`;
-      };
+      const cards = slider.children; const total = cards.length;
+      const go = (dir)=>{ idx=(idx+dir+total)%total; const w=cards[0].getBoundingClientRect().width+16; slider.style.transform=`translateX(${-idx*w}px)`; };
       document.querySelector('.slide-btn.prev').addEventListener('click', ()=>go(-1));
       document.querySelector('.slide-btn.next').addEventListener('click', ()=>go(+1));
       let auto = setInterval(()=>go(+1), 4000);
@@ -473,10 +429,6 @@
       slider.addEventListener('mouseleave', ()=>auto=setInterval(()=>go(+1), 4000));
       window.addEventListener('resize', ()=>{ idx=0; slider.style.transform='translateX(0)'; });
     })();
-
-    // ===== Fallback de logo si no existe el horizontal =====
-    const lg = document.getElementById('aoLogo');
-    if (lg) lg.addEventListener('error', ()=>{ lg.src = '/logo.png?v=6'; });
   </script>
 </body>
 </html>
