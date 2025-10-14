@@ -51,40 +51,25 @@
     .menu{display:flex;gap:18px;align-items:center;font-weight:800}
     .menu a{color:var(--ao-blue)} .menu a:hover{opacity:.85}
 
-    <!-- 🔹 INICIO CARRUSEL DE BANNERS -->
-<div class="banner-slider">
-  <div class="slides">
-    <div class="slide">
-      <a href="tienda.html"><img src="banners/envios-promos.jpg" alt="Promos AO Refrigeraciones"></a>
-    </div>
-    <div class="slide">
-      <a href="tienda.html"><img src="banners/tienda.jpg" alt="Tienda AO Refrigeraciones"></a>
-    </div>
-    <div class="slide">
-      <a href="inelro.html"><img src="banners/inelro.jpg" alt="Servicio Oficial INELRO"></a>
-    </div>
-  </div>
-</div>
-<!-- 🔹 FIN CARRUSEL DE BANNERS -->
-
-    /* ====== BANNERS SUPERIORES (full-width arriba) */
+    /* ====== BANNERS SUPERIORES (full-width, 1 a la vez) */
     .top-banners{padding:0;background:#fff;border-bottom:1px solid #eaeaea}
-    .banner-slider{position:relative;overflow:hidden;max-width:100%}
-    .banner-track{display:flex;transition:transform .6s ease}
-    .banner-track img{width:100%;height:420px;object-fit:cover;display:block}
-    .slide{position:relative}
+    .banner-slider{position:relative;overflow:hidden;width:100%}
+    .banner-viewport{width:100%;overflow:hidden}
+    .banner-track{display:flex;transition:transform .6s ease;will-change:transform}
+    .slide{position:relative;flex:0 0 100%} /* clave: 1 slide ocupa todo el ancho */
+    .slide img{width:100%;height:420px;object-fit:cover;display:block}
     .slide::after{content:"";position:absolute;inset:0;background:var(--grad-overlay)}
     .slide .banner-link{position:absolute;inset:0;z-index:5;display:block;text-indent:-9999px}
-    .banner-caption{position:absolute;left:8%;bottom:18%;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.45)}
+    .banner-caption{position:absolute;left:8%;bottom:18%;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.45);z-index:6}
     .banner-caption h3{margin:0 0 .4rem;font-size:clamp(22px,3.6vw,38px)}
     .banner-caption p{margin:0 0 .8rem;font-size:clamp(14px,2vw,18px)}
-    .banner-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.35);color:#fff;font-size:2rem;line-height:1;width:42px;height:42px;border-radius:50%;cursor:pointer}
+    .banner-nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.35);color:#fff;font-size:2rem;line-height:1;width:42px;height:42px;border-radius:50%;cursor:pointer;z-index:7}
     .banner-nav.prev{left:14px}
     .banner-nav.next{right:14px}
-    .banner-dots{position:absolute;left:0;right:0;bottom:14px;text-align:center}
+    .banner-dots{position:absolute;left:0;right:0;bottom:14px;text-align:center;z-index:7}
     .banner-dots button{width:10px;height:10px;border:none;border-radius:50%;margin:0 4px;background:#fff8;cursor:pointer}
     .banner-dots button.active{background:#fff}
-    @media (max-width:980px){ .banner-track img{height:260px} }
+    @media (max-width:980px){ .slide img{height:260px} }
 
     /* ==== Hero tarjeta (debajo del banner) */
     .hero{background:var(--grad-hero)}
@@ -180,50 +165,52 @@
     </div>
   </header>
 
-  <!-- ===== BANNERS SUPERIORES ===== -->
+  <!-- ===== BANNERS SUPERIORES (UNO POR VEZ) ===== -->
   <section id="banners" class="top-banners" aria-label="Promociones y destacados">
     <div class="banner-slider">
-      <div class="banner-track">
+      <div class="banner-viewport">
+        <div class="banner-track">
 
-        <!-- Slide 1: Envíos/Promos → Tienda -->
-        <figure class="slide">
-          <img src="/banners/envios-promos.jpg"
-               onerror="this.src='https://placehold.co/1600x600/EDF9F9/283473?text=Env%C3%ADos+a+todo+el+pa%C3%ADs+%7C+Promos'"
-               alt="Envíos y promociones">
-          <a class="banner-link" href="#tienda">Ir a Tienda</a>
-          <figcaption class="banner-caption">
-            <h3>Envíos a todo el país</h3>
-            <p>3 cuotas sin interés · 10% en efectivo · Descuento especial para técnicos</p>
-            <a class="btn btn-green" href="#tienda">Ver tienda</a>
-          </figcaption>
-        </figure>
+          <!-- Slide 1: Envíos/Promos → Tienda -->
+          <figure class="slide">
+            <img src="/banners/envios-promos.jpg"
+                 onerror="this.src='https://placehold.co/1600x600/EDF9F9/283473?text=Env%C3%ADos+a+todo+el+pa%C3%ADs+%7C+Promos'"
+                 alt="Envíos y promociones">
+            <a class="banner-link" href="#tienda">Ir a Tienda</a>
+            <figcaption class="banner-caption">
+              <h3>Envíos a todo el país</h3>
+              <p>3 cuotas sin interés · 10% en efectivo · Descuento especial para técnicos</p>
+              <a class="btn btn-green" href="#tienda">Ver tienda</a>
+            </figcaption>
+          </figure>
 
-        <!-- Slide 2: Tienda -->
-        <figure class="slide">
-          <img src="/banners/tienda.jpg"
-               onerror="this.src='https://placehold.co/1600x600/A2ECF9/1F2758?text=Insumos%2C+herramientas+y+repuestos'"
-               alt="Tienda AO">
-          <a class="banner-link" href="#tienda">Explorar Tienda</a>
-          <figcaption class="banner-caption">
-            <h3>Venta de insumos, herramientas y repuestos</h3>
-            <p>Todo lo que necesitás para instalación y mantenimiento</p>
-            <a class="btn btn-primary" href="#tienda">Explorar</a>
-          </figcaption>
-        </figure>
+          <!-- Slide 2: Tienda -->
+          <figure class="slide">
+            <img src="/banners/tienda.jpg"
+                 onerror="this.src='https://placehold.co/1600x600/A2ECF9/1F2758?text=Insumos%2C+herramientas+y+repuestos'"
+                 alt="Tienda AO">
+            <a class="banner-link" href="#tienda">Explorar Tienda</a>
+            <figcaption class="banner-caption">
+              <h3>Venta de insumos, herramientas y repuestos</h3>
+              <p>Todo lo que necesitás para instalación y mantenimiento</p>
+              <a class="btn btn-primary" href="#tienda">Explorar</a>
+            </figcaption>
+          </figure>
 
-        <!-- Slide 3: INELRO -->
-        <figure class="slide">
-          <img src="/banners/inelro.jpg"
-               onerror="this.src='https://placehold.co/1600x600/283473/FFFFFF?text=Servicio+T%C3%A9cnico+Oficial+INELRO'"
-               alt="Servicio Técnico Oficial INELRO">
-          <a class="banner-link" href="#inelro-title">Ver INELRO</a>
-          <figcaption class="banner-caption">
-            <h3>Servicio Técnico Oficial INELRO</h3>
-            <p>Repuestos originales a pedido · Rufino y zona</p>
-            <a class="btn btn-outline" style="color:#fff;border-color:#fff" href="#inelro-title">Saber más</a>
-          </figcaption>
-        </figure>
+          <!-- Slide 3: INELRO -->
+          <figure class="slide">
+            <img src="/banners/inelro.jpg"
+                 onerror="this.src='https://placehold.co/1600x600/283473/FFFFFF?text=Servicio+T%C3%A9cnico+Oficial+INELRO'"
+                 alt="Servicio Técnico Oficial INELRO">
+            <a class="banner-link" href="#inelro-title">Ver INELRO</a>
+            <figcaption class="banner-caption">
+              <h3>Servicio Técnico Oficial INELRO</h3>
+              <p>Repuestos originales a pedido · Rufino y zona</p>
+              <a class="btn btn-outline" style="color:#fff;border-color:#fff" href="#inelro-title">Saber más</a>
+            </figcaption>
+          </figure>
 
+        </div>
       </div>
       <button class="banner-nav prev" aria-label="Anterior">‹</button>
       <button class="banner-nav next" aria-label="Siguiente">›</button>
@@ -414,7 +401,7 @@
 
   <!-- FAB WhatsApp -->
   <a class="wa-fab" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quisiera%20hacer%20una%20consulta." aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M19.11 17.39c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.07-.12-.25-.2-.52-.34z" fill="#fff"></path><path d="M26.6 5.4C23.9 2.7 20.2 1.3 16.3 1.3 8.8 1.3 2.9 7.2 2.9 14.7c0 2.3.6 4.6 1.8 6.6L2 30l8.8-2.3c1.9 1 4.1 1.5 6.2 1.5h0c7.5 0 13.4-5.9 13.4-13.4 0-3.6-1.4-7.2-4.1-9.9zM16.9 27.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-5.2 1.4 1.4-5.1-.2-.4c-1.1-1.6-1.6-3.5-1.6-5.5 0-5.6 4.6-10.2 10.2-10.2 2.7 0 5.3 1.1 7.2 3.1 1.9 1.9 3 4.5 3 7.2 0 5.7-4.6 10.2-10.1 10.2z" fill="#fff"></path></svg>
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M19.11 17.39c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.07-.12-.25-.2-.52-.34z" fill="#fff"></path><path d="M26.6 5.4C23.9 2.7 20.2 1.3 16.3 1.3 8.8 1.3 2.9 7.2 2.9 14.7c0 2.3.6 4.6 1.8 6.6L2 30l8.8-2.3c1.9 1 4.1 1.5 6.2 1.5h0c7.5 0 13.4-5.9 13.4-13.4 0-3.6-1.4-7.2-4.1-9.9z" fill="#fff"></path></svg>
   </a>
 
   <!-- ===== DATA de productos (solo tus reales; $0 por ahora) ===== -->
@@ -442,7 +429,7 @@
     const lg = document.getElementById('aoLogo');
     if (lg) lg.addEventListener('error', ()=>{ lg.src = '/logo.png'; });
 
-    // ===== Slider superior (banners) =====
+    // ===== Slider superior (banners) – 1 por vez =====
     (function(){
       const slider = document.querySelector('.banner-slider');
       if(!slider) return;
@@ -452,6 +439,7 @@
       const next = slider.querySelector('.banner-nav.next');
       const dotsWrap = slider.querySelector('.banner-dots');
 
+      // Dots
       slides.forEach((_,i)=>{ const b=document.createElement('button'); if(i===0) b.classList.add('active'); dotsWrap.appendChild(b); });
       const dots = Array.from(dotsWrap.children);
 
