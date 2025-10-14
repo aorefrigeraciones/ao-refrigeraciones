@@ -1,11 +1,10 @@
 :root{
   --bg:#ffffff;
-  --text:#0f172a;      /* gris muy oscuro azulado */
+  --text:#0f172a;
   --muted:#475569;
-  --brand:#1e40af;     /* azul marca */
+  --brand:#1e40af;
   --brand-600:#1d4ed8;
-  --brand-100:#e2e8f0; /* fondos suaves */
-  --ring: rgba(30,64,175,.15);
+  --brand-100:#e2e8f0;
 }
 
 *{box-sizing:border-box}
@@ -20,29 +19,25 @@ img{max-width:100%;height:auto;display:block}
   background:#fff; border-bottom:1px solid #eef2f7;
 }
 .header-inner{display:flex;align-items:center;gap:24px;padding:12px 0}
-.nav-logo img{height:54px; width:auto} /* logo horizontal más grande */
+.nav-logo img{height:54px; width:auto}
 .main-nav{margin-left:auto;display:flex;gap:18px;align-items:center}
 .main-nav a{color:var(--text);text-decoration:none;font-weight:600}
 .main-nav a:hover{color:var(--brand)}
-.cta-whatsapp{
-  background:#25D366;color:#fff !important;border-radius:999px;padding:8px 14px;
-}
+.cta-whatsapp{background:#25D366;color:#fff !important;border-radius:999px;padding:8px 14px}
 .wa-dot{display:inline-block;width:8px;height:8px;background:#fff;border-radius:999px;margin-right:8px}
-
 .nav-toggle{display:none;margin-left:auto;background:transparent;border:0;font-size:24px}
 
 /* ======= Banners Slider ======= */
 .hero{background:#fff;padding:14px 0 0}
 .banner-slider{
   position:relative;overflow:hidden;border-radius:12px;
-  box-shadow:0 4px 18px rgba(2,8,23,.06);
+  box-shadow:0 4px 18px rgba(2,8,23,.06)
 }
 .banner-slider .slide{display:none;width:100%;line-height:0}
 .banner-slider .slide.active{display:block}
 .banner-slider img{
-  width:100%;height:auto;max-height:420px;object-fit:cover;
+  width:100%;height:auto;max-height:420px;object-fit:cover
 }
-
 .banner-slider .nav{
   position:absolute;top:50%;transform:translateY(-50%);
   background:rgba(0,0,0,.35);color:#fff;border:0;width:40px;height:40px;border-radius:999px;
@@ -51,7 +46,6 @@ img{max-width:100%;height:auto;display:block}
 .banner-slider .nav:hover{background:rgba(0,0,0,.55)}
 .banner-slider .prev{left:10px}
 .banner-slider .next{right:10px}
-
 .banner-slider .dots{
   position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
   display:flex;gap:8px
@@ -59,7 +53,7 @@ img{max-width:100%;height:auto;display:block}
 .banner-slider .dots button{
   width:10px;height:10px;border-radius:999px;border:0;background:rgba(255,255,255,.6);cursor:pointer
 }
-.banner-slider .dots button.active{background:var(--brand)}
+.banner-slider .dots button.active{background:#1e40af}
 
 /* ======= Masthead ======= */
 .masthead{padding:36px 0 10px}
@@ -74,12 +68,11 @@ img{max-width:100%;height:auto;display:block}
 .btn-ghost:hover{background:var(--brand-100)}
 .btn-whatsapp{background:#25D366;color:#fff}
 .btn-whatsapp:hover{filter:brightness(.95)}
-
 .pills{display:flex;gap:18px;flex-wrap:wrap;list-style:none;padding:0;margin:12px 0 0}
 .pill-title{font-weight:800}
 .pill-sub{display:block;color:var(--muted)}
 
-/* ======= Sections genéricas ======= */
+/* ======= Sections ======= */
 .section{padding:56px 0}
 .section.alt{background:#f8fafc}
 .section-hd{text-align:left;margin-bottom:22px}
@@ -103,16 +96,29 @@ img{max-width:100%;height:auto;display:block}
 .checklist{margin:10px 0 16px;padding-left:18px}
 .checklist li{margin:6px 0}
 
-/* ======= Productos (preview simple) ======= */
+/* ======= Shop ======= */
+.shop-controls{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px
+}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  border:1px solid #dbe3ef;background:#fff;border-radius:999px;padding:6px 12px;cursor:pointer;
+  font-weight:600;color:#0b1730
+}
+.chip.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.search{
+  min-width:240px;flex:1 1 260px;border:1px solid #dbe3ef;border-radius:10px;padding:9px 12px
+}
 .grid-products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.product{
+.product-card{
   background:#fff;border:1px solid #eef2f7;border-radius:12px;padding:14px;
   box-shadow:0 3px 10px rgba(2,8,23,.04)
 }
 .product-img.ph{height:140px;border-radius:8px;background:linear-gradient(180deg,#f1f5f9,#e2e8f0)}
 .product-name{margin:10px 0 4px}
-.product-cat{color:var(--muted);margin:0 0 6px}
+.product-meta{color:var(--muted);margin:0 0 6px}
 .product-price{font-weight:800;margin:0 0 10px}
+.product-actions .btn{width:100%;text-align:center}
 
 /* ======= CTA WA ======= */
 .cta-wa{background:linear-gradient(180deg,#eef6ff,#ffffff)}
