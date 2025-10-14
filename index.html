@@ -36,21 +36,20 @@
   <section class="hero">
     <div class="container">
       <div class="banner-slider" id="bannerSlider" aria-label="Promociones destacadas">
-        <!-- Cada slide es el link completo -->
-        <a class="slide" href="#tienda" aria-label="Envíos y promociones">
-          <img src="/banner/envios-promos.png?v=2" alt="Envío a todo el país, 3 cuotas sin interés y descuentos">
+        <!-- Cada slide es 100% clickeable -->
+        <a class="slide" href="#tienda" aria-label="Envíos y promos">
+          <img src="/banner/envios-promos.png?v=2" alt="Envío a todo el país, cuotas y descuentos">
         </a>
         <a class="slide" href="#tienda" aria-label="Tienda AO">
-          <img src="/banner/tienda.png?v=2" alt="Venta de insumos, herramientas y repuestos">
+          <img src="/banner/tienda.png?v=2" alt="Insumos, repuestos y herramientas">
         </a>
-        <a class="slide" href="#inelro" aria-label="Servicio Técnico Oficial INELRO">
+        <a class="slide" href="#inelro" aria-label="Servicio Técnico INELRO">
           <img src="/banner/inelro.png?v=2" alt="Servicio Técnico Oficial INELRO">
         </a>
 
         <!-- Controles -->
         <button class="nav prev" id="prevBanner" aria-label="Anterior">‹</button>
         <button class="nav next" id="nextBanner" aria-label="Siguiente">›</button>
-        <!-- Dots -->
         <div class="dots" id="bannerDots" aria-hidden="true"></div>
       </div>
     </div>
@@ -152,7 +151,7 @@
     </div>
   </section>
 
-  <!-- ================= TIENDA (preview simple) ================= -->
+  <!-- ================= TIENDA ================= -->
   <section id="tienda" class="section alt">
     <div class="container">
       <header class="section-hd">
@@ -160,32 +159,35 @@
         <p>Venta de insumos, repuestos y herramientas. Envíos a todo el país. <strong>Consultá por stock</strong>.</p>
       </header>
 
-      <!-- Preview: acá se muestran los destacados; el listado completo lo tenés más abajo o en /tienda si luego lo separás -->
-      <div class="grid-products">
-        <!-- Dejá solo los productos reales cuando termines de cargar precios/stock -->
-        <!-- Ejemplo de card (sin precio fijo aún) -->
-        <article class="product">
-          <div class="product-img ph"></div>
-          <h3 class="product-name">Artículo destacado</h3>
-          <p class="product-cat">Insumos</p>
-          <p class="product-price">$0</p>
-          <a class="btn btn-ghost" href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20este%20art%C3%ADculo" target="_blank" rel="noopener">Consultar</a>
-        </article>
-        <article class="product">
-          <div class="product-img ph"></div>
-          <h3 class="product-name">Repuesto destacado</h3>
-          <p class="product-cat">Repuestos</p>
-          <p class="product-price">$0</p>
-          <a class="btn btn-ghost" href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20este%20repuesto" target="_blank" rel="noopener">Consultar</a>
-        </article>
-        <article class="product">
-          <div class="product-img ph"></div>
-          <h3 class="product-name">Herramienta</h3>
-          <p class="product-cat">Herramientas</p>
-          <p class="product-price">$0</p>
-          <a class="btn btn-ghost" href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20esta%20herramienta" target="_blank" rel="noopener">Consultar</a>
-        </article>
+      <!-- Filtros + búsqueda -->
+      <div class="shop-controls">
+        <div class="filters">
+          <button class="chip active" data-filter="all">Todos</button>
+          <button class="chip" data-filter="Insumos">Insumos</button>
+          <button class="chip" data-filter="Repuestos">Repuestos</button>
+          <button class="chip" data-filter="Herramientas">Herramientas</button>
+        </div>
+        <input id="shopSearch" class="search" type="search" placeholder="Buscar por nombre o código…" aria-label="Buscar productos">
       </div>
+
+      <!-- Grid productos (SIN productos inventados). 
+           Agregá tus productos duplicando la plantilla comentada debajo. -->
+      <div id="shopGrid" class="grid-products"></div>
+
+      <!-- PLANTILLA (comentada) PARA AGREGAR PRODUCTOS MANUALMENTE
+      <article class="product-card" data-cat="Insumos" data-code="PK-001">
+        <div class="product-img ph"></div>
+        <h3 class="product-name">PractiKit instalación split 3 mts</h3>
+        <p class="product-meta">Código: <span class="code">PK-001</span></p>
+        <p class="product-price">$0</p>
+        <div class="product-actions">
+          <a class="btn btn-ghost" target="_blank" rel="noopener"
+             href="https://wa.me/543382411473?text=Hola%20AO%2C%20consulta%20por%20PK-001%20PractiKit">
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </article>
+      -->
 
       <div class="center mt-24">
         <a class="btn btn-primary" href="https://wa.me/543382411473?text=Hola%20AO%2C%20busco%20un%20producto%20de%20la%20tienda" target="_blank" rel="noopener">Asesoramiento por WhatsApp</a>
@@ -204,7 +206,7 @@
     </div>
   </section>
 
-  <!-- ================= TESTIMONIOS (al final) ================= -->
+  <!-- ================= TESTIMONIOS ================= -->
   <section id="testimonios" class="section alt">
     <div class="container">
       <header class="section-hd">
@@ -224,6 +226,14 @@
         <figure class="review">
           <blockquote>“Trabajo prolijo, rápido y con buena onda. Súper recomendables.”</blockquote>
           <figcaption>— Laura, Rufino</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>“Coordinamos por WhatsApp, llegaron en horario y quedó impecable.”</blockquote>
+          <figcaption>— Nicolás, Rufino</figcaption>
+        </figure>
+        <figure class="review">
+          <blockquote>“Me asesoraron para elegir el equipo correcto para mi local. Excelente.”</blockquote>
+          <figcaption>— Belén, Rufino</figcaption>
         </figure>
       </div>
     </div>
@@ -258,7 +268,7 @@
             Instagram
           </a>
         </p>
-        <p><a href="#blog">Blog AO</a></p>
+        <p><a id="blog" href="#blog">Blog AO</a></p>
       </div>
     </div>
 
@@ -267,7 +277,7 @@
     </div>
   </footer>
 
-  <!-- ============== JS: menú mobile + slider banners ============== -->
+  <!-- ============== JS: menú mobile + slider + tienda (filtros/busca) ============== -->
   <script>
     // Menú mobile
     (function(){
@@ -277,7 +287,7 @@
       btn.addEventListener('click', ()=> nav.classList.toggle('open'));
     })();
 
-    // Slider de banners
+    // Slider de banners (1 por vez)
     (function() {
       const slider = document.getElementById('bannerSlider');
       if (!slider) return;
@@ -287,7 +297,7 @@
       const next = document.getElementById('nextBanner');
       const dotsWrap = document.getElementById('bannerDots');
 
-      // Crear dots
+      // Crear puntos
       dotsWrap.innerHTML = '';
       slides.forEach((_, i) => {
         const b = document.createElement('button');
@@ -304,27 +314,62 @@
         slides.forEach((s, k) => s.classList.toggle('active', k === idx));
         dots.forEach((d, k) => d.classList.toggle('active', k === idx));
       }
-
       function nextSlide() { show(idx + 1); }
       function prevSlide() { show(idx - 1); }
 
-      // Listeners
       next.addEventListener('click', () => { nextSlide(); restart(); });
       prev.addEventListener('click', () => { prevSlide(); restart(); });
       dots.forEach((d, k) => d.addEventListener('click', () => { show(k); restart(); }));
 
-      // Auto-rotación
       function start() { timer = setInterval(nextSlide, 5000); }
-      function stop() { clearInterval(timer); timer = null; }
-      function restart() { stop(); start(); }
+      function stop()  { clearInterval(timer); timer = null; }
+      function restart(){ stop(); start(); }
 
-      // Inicio
       show(0);
       start();
 
-      // Pausa en hover (desktop)
       slider.addEventListener('mouseenter', stop);
       slider.addEventListener('mouseleave', start);
+    })();
+
+    // ======= TIENDA: filtros y búsqueda (sobre cards en el DOM) =======
+    (function(){
+      const grid   = document.getElementById('shopGrid');
+      const chips  = document.querySelectorAll('.chip[data-filter]');
+      const search = document.getElementById('shopSearch');
+
+      if(!grid) return;
+
+      // Si no hay productos cargados, no mostramos nada inventado.
+      // (Dejamos grid vacío y sólo operan filtros/búsqueda cuando agregues cards.)
+      let cards = Array.from(grid.querySelectorAll('.product-card'));
+
+      function apply(){
+        const q = (search?.value || '').trim().toLowerCase();
+        const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
+
+        cards.forEach(card=>{
+          const name = (card.querySelector('.product-name')?.textContent || '').toLowerCase();
+          const code = (card.dataset.code || '').toLowerCase();
+          const cat  = (card.dataset.cat  || '');
+          const byCat = (active==='all' || cat===active);
+          const byText = (!q || name.includes(q) || code.includes(q));
+          card.style.display = (byCat && byText) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(c=>{
+        c.addEventListener('click', ()=>{
+          chips.forEach(x=>x.classList.remove('active'));
+          c.classList.add('active');
+          apply();
+        });
+      });
+
+      search?.addEventListener('input', apply);
+
+      // Inicial
+      apply();
     })();
   </script>
 </body>
