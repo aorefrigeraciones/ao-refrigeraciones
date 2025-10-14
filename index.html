@@ -7,24 +7,22 @@
   <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales en Rufino y zona.">
   <link rel="icon" href="/logo-isotipo.png" type="image/png" />
 
-  <!-- Fuentes de marca -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ====== ESTILOS (modo claro, look moderno) ====== -->
   <style>
     :root{
       --ao-blue:#283473;
       --ao-blue-900:#1F2758;
       --ao-celeste:#A2ECF9;
       --ao-base:#EDF9F9;
-      --text:#24222C;
-      --muted:#5B6470;
-      --border:#E7EBF0;
-      --white:#fff;
+      --text:#24222C; --muted:#5B6470; --border:#E7EBF0; --white:#fff;
       --shadow:0 10px 30px rgba(0,0,0,.06);
       --whatsapp:#25D366;
+      --grad-hero: linear-gradient(180deg,#F8FEFF,#EDF9F9);
+      --grad-overlay: linear-gradient(180deg, rgba(40,52,115,.00) 35%, rgba(40,52,115,.38));
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:#fff;color:var(--text);font-family:Lato,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
@@ -34,7 +32,6 @@
     h3{font-size:clamp(18px,2.1vw,22px)}
     p{line-height:1.55}
     a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
     .container{max-width:1180px;margin:0 auto;padding:0 20px}
     .section{padding:70px 0}
     .section-tight{padding:46px 0}
@@ -50,22 +47,35 @@
     /* ==== Header */
     .site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-    .brand .logo{height:44px;width:auto}
+    .brand .logo{height:70px;width:auto;object-fit:contain;margin:-6px 0}
     .menu{display:flex;gap:18px;align-items:center;font-weight:800}
-    .menu a{color:var(--ao-blue)}
-    .menu a:hover{opacity:.85}
+    .menu a{color:var(--ao-blue)} .menu a:hover{opacity:.85}
 
-    /* ==== Hero */
-    .hero{background:linear-gradient(180deg,#F8FEFF,#F4FBFE)}
+    /* ==== Hero con slider */
+    .hero{background:var(--grad-hero)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
-    .hero-photo{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,52,115,.08),transparent)}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 0;padding:0;list-style:none}
     .kpis li{border:1px solid var(--border);border-radius:14px;padding:12px;text-align:center;background:#fff}
-    .kpis strong{color:var(--ao-blue)}
-    .kpis span{display:block;color:var(--muted);font-size:.95rem}
+    .kpis strong{color:var(--ao-blue)} .kpis span{display:block;color:var(--muted);font-size:.95rem}
+    .banner-slider{position:relative;overflow:hidden;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow);background:#f6f9ff}
+    .banner-track{display:flex;transition:transform .5s ease;will-change:transform}
+    .banner-track img{width:100%;height:360px;object-fit:cover;display:block}
+    .slide{position:relative;margin:0}
+    .slide::after{content:"";position:absolute;inset:0;background:var(--grad-overlay)}
+    .banner-caption{
+      position:absolute; left:0; right:0; bottom:24px;
+      display:grid; place-items:center; text-align:center; gap:10px; color:#fff; padding:10px 16px;
+    }
+    .banner-caption h3{margin:0;font-size:clamp(20px,3.4vw,36px);font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.28)}
+    .banner-caption p{margin:0 0 6px 0;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .banner-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(40,52,115,.9);color:#fff;border:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+    .banner-nav.prev{left:10px} .banner-nav.next{right:10px}
+    .banner-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;gap:8px;justify-content:center}
+    .banner-dots button{width:10px;height:10px;border-radius:50%;border:1px solid #fff;background:#ffffff80;cursor:pointer}
+    .banner-dots button.active{background:#fff}
+    @media (max-width:980px){ .banner-track img{height:240px} }
 
-    /* ==== Bloque valores */
+    /* ==== Valores cortos */
     .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
     .value{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
     .value b{color:var(--ao-blue)}
@@ -76,14 +86,12 @@
 
     /* ==== Servicios */
     .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-    .service{display:flex;flex-direction:column;gap:6px}
     .service p{color:var(--muted)}
 
     /* ==== Inelro */
     .inelro{background:linear-gradient(180deg,#20306B,#1B265A);color:#fff}
     .inelro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
-    .inelro .ticks{margin:.6rem 0 1rem;padding-left:18px}
-    .inelro .ticks li{margin:.35rem 0}
+    .inelro .ticks{margin:.6rem 0 1rem;padding-left:18px} .inelro .ticks li{margin:.35rem 0}
 
     /* ==== Tienda */
     .notice{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:-8px auto 18px;padding:.75rem 1rem;max-width:900px;background:linear-gradient(180deg,#f5fbff,#eef7ff);border:1px solid #d7e6ff;color:#0b2a5b;border-radius:999px;font-weight:800}
@@ -109,23 +117,24 @@
     .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .blog .card p{color:var(--muted)}
 
-    /* ==== Opiniones */
+    /* ==== Opiniones (2 desktop / 1 mobile) + animación */
     .testis{background:var(--ao-celeste)}
     .slider-wrap{position:relative;overflow:hidden;border-radius:16px}
     .slider{display:flex;gap:16px;transition:transform .35s ease;padding:4px}
+    .slider .card.quote{flex:0 0 calc(50% - 8px); opacity:.65; transform:translateY(6px); transition:opacity .35s ease, transform .35s ease}
+    .slider .card.quote.is-active{opacity:1; transform:translateY(0)}
     .quote.card p{font-style:italic}
     .slide-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(40,52,115,.92);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer}
     .slide-btn.prev{left:8px}.slide-btn.next{right:8px}
+    @media (max-width:768px){ .slider .card.quote{flex:0 0 100%} }
 
-    /* ==== Footer */
+    /* ==== Footer & FAB */
     .footer{background:var(--ao-blue);color:#fff;padding:38px 0}
     .footer-grid{display:grid;grid-template-columns:1.3fr 1fr auto;gap:18px;align-items:center}
     .icon-btn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#ffffff10;border:1px solid #ffffff40}
-
-    /* ==== WhatsApp FAB */
     .wa-fab{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--whatsapp);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:70}
 
-    /* ==== Responsive */
+    /* ==== Responsive layout */
     @media (max-width:980px){
       .menu{display:none}
       .hero-grid,.q-grid,.inelro-grid{grid-template-columns:1fr}
@@ -148,14 +157,12 @@
         <a href="#trabajos">Trabajos</a>
         <a href="#blog">Blog AO</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn btn-green" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">
-          WhatsApp
-        </a>
+        <a class="btn btn-green" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20pedir%20presupuesto.">WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO con SLIDER ===== -->
   <section class="hero section">
     <div class="container hero-grid">
       <div class="card">
@@ -174,9 +181,43 @@
           <li><strong>24–48 h</strong><span>turnos rápidos</span></li>
         </ul>
       </div>
-      <div class="hero-photo">
-        <!-- Subí /banner.jpg (1600x900 aprox). Si no existe, se ve placeholder -->
-        <img src="/banner.jpg" onerror="this.src='https://placehold.co/1600x900?text=Foto+del+taller+%2F+instalaci%C3%B3n'" alt="AO Refrigeraciones - taller y trabajos">
+
+      <!-- Slider de banners -->
+      <div class="banner-slider" aria-label="Banner principal con imágenes deslizables">
+        <div class="banner-track">
+          <!-- Slide 1: Envíos y promociones -->
+          <figure class="slide">
+            <img src="/banners/envios-promos.jpg" onerror="this.src='https://placehold.co/1600x600/EDF9F9/283473?text=Env%C3%ADos+a+todo+el+pa%C3%ADs+%7C+3+cuotas+sin+inter%C3%A9s+%7C+Descuentos'" alt="Envíos y promociones">
+            <figcaption class="banner-caption">
+              <h3>Envíos a todo el país</h3>
+              <p>3 cuotas sin interés · 10% descuento en efectivo · Descuento especial para técnicos</p>
+              <a class="btn btn-green" target="_blank" href="https://wa.me/543382411473?text=Hola%20AO%20Refrigeraciones%2C%20quiero%20consultar%20sobre%20env%C3%ADos%20y%20promociones.">Consultar ahora</a>
+            </figcaption>
+          </figure>
+
+          <!-- Slide 2: Tienda -->
+          <figure class="slide">
+            <img src="/banners/tienda.jpg" onerror="this.src='https://placehold.co/1600x600/A2ECF9/1F2758?text=Tienda+AO:+Insumos%2C+herramientas+y+repuestos'" alt="Tienda AO">
+            <figcaption class="banner-caption">
+              <h3>Venta de insumos, herramientas y repuestos</h3>
+              <p>Todo lo que necesitás para tu instalación y mantenimiento</p>
+              <a class="btn btn-primary" href="#tienda">Ver tienda</a>
+            </figcaption>
+          </figure>
+
+          <!-- Slide 3: INELRO -->
+          <figure class="slide">
+            <img src="/banners/inelro.jpg" onerror="this.src='https://placehold.co/1600x600/283473/FFFFFF?text=Servicio+T%C3%A9cnico+Oficial+INELRO'" alt="Servicio Técnico Oficial INELRO">
+            <figcaption class="banner-caption">
+              <h3>Servicio Técnico Oficial INELRO</h3>
+              <p>Repuestos originales a pedido · Rufino y zona</p>
+              <a class="btn btn-outline" style="color:#fff;border-color:#fff" href="#inelro-title">Saber más</a>
+            </figcaption>
+          </figure>
+        </div>
+        <button class="banner-nav prev" aria-label="Anterior">‹</button>
+        <button class="banner-nav next" aria-label="Siguiente">›</button>
+        <div class="banner-dots" role="tablist" aria-label="Paginación del banner"></div>
       </div>
     </div>
   </section>
@@ -284,17 +325,27 @@
     </div>
   </section>
 
-  <!-- ===== OPINIONES (al final) ===== -->
+  <!-- ===== OPINIONES (con nuevos + animación) ===== -->
   <section id="opiniones" class="section testis" aria-labelledby="opiniones-title">
     <div class="container">
       <h2 id="opiniones-title">Opiniones de nuestros clientes</h2>
       <div class="slider-wrap">
         <button class="slide-btn prev" aria-label="Anterior">‹</button>
         <div class="slider" aria-live="polite">
+          <!-- EXISTENTES -->
           <article class="card quote"><p>“Excelente atención y trabajo prolijo. Me dejaron el aire como nuevo.”</p><span>Laura — Rufino</span></article>
           <article class="card quote"><p>“Muy buena predisposición y rapidez. Los llamé un sábado y vinieron enseguida.”</p><span>Julián — Rufino</span></article>
           <article class="card quote"><p>“Unos genios! Les escribí por WhatsApp y al rato ya tenía turno.”</p><span>Lucía — Rufino</span></article>
           <article class="card quote"><p>“Trabajo prolijo y amabilidad. Recomendados.”</p><span>Nicolás — Rufino</span></article>
+          <!-- NUEVOS -->
+          <article class="card quote"><p>“Gracias Alberto, me recuperaste la heladera que me habían dicho que no servía más. Funciona perfecta.”</p><span>Graciela — Rufino</span></article>
+          <article class="card quote"><p>“Tres técnicos vieron mi aire y ninguno pudo repararlo. Gracias Alberto por dejarlo andando de nuevo.”</p><span>Carlos — Rufino</span></article>
+          <article class="card quote"><p>“Excelente atención. Puntuales y prolijos, dejaron todo impecable. ¡Súper recomendados!”</p><span>Mariana — Rufino</span></article>
+          <article class="card quote"><p>“En menos de 24 horas vinieron y solucionaron el problema. ¡Así da gusto!”</p><span>José — Rufino</span></article>
+          <article class="card quote"><p>“Muy buena atención y claridad en el presupuesto. Cumplieron con todo lo que prometieron.”</p><span>Romina — Rufino</span></article>
+          <article class="card quote"><p>“Nos instalaron dos equipos en el local. Quedó prolijo y funcionando perfecto. Gracias!”</p><span>Diego — Rufino</span></article>
+          <article class="card quote"><p>“Trabajo impecable y buena onda. Les escribí un domingo y al otro día ya tenía turno.”</p><span>Lucía — Rufino</span></article>
+          <article class="card quote"><p>“Me recomendaron AO y fue un acierto. Me explicaron todo y el aire quedó como nuevo.”</p><span>Federico — Rufino</span></article>
         </div>
         <button class="slide-btn next" aria-label="Siguiente">›</button>
       </div>
@@ -335,9 +386,7 @@
     <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M19.11 17.39c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.03-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.98-.22-.53-.45-.46-.6-.46-.15 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.96.94-.96 2.29 0 1.35.99 2.65 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.07-.12-.25-.2-.52-.34z" fill="#fff"></path><path d="M26.6 5.4C23.9 2.7 20.2 1.3 16.3 1.3 8.8 1.3 2.9 7.2 2.9 14.7c0 2.3.6 4.6 1.8 6.6L2 30l8.8-2.3c1.9 1 4.1 1.5 6.2 1.5h0c7.5 0 13.4-5.9 13.4-13.4 0-3.6-1.4-7.2-4.1-9.9zM16.9 27.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-5.2 1.4 1.4-5.1-.2-.4c-1.1-1.6-1.6-3.5-1.6-5.5 0-5.6 4.6-10.2 10.2-10.2 2.7 0 5.3 1.1 7.2 3.1 1.9 1.9 3 4.5 3 7.2 0 5.7-4.6 10.2-10.1 10.2z" fill="#fff"></path></svg>
   </a>
 
-  <!-- ====== DATA DE PRODUCTOS ======
-       Subí imágenes a /productos/ con el nombre sugerido en "image".
-       Precio $0 por ahora. No mostramos códigos. -->
+  <!-- ===== DATA de productos (placeholder; podés editar nombres/desc e imágenes) ===== -->
   <script id="product-data" type="application/json">
   {
     "order": ["Insumos","Repuestos","Herramientas","Otros"],
@@ -354,15 +403,58 @@
   }
   </script>
 
-  <!-- ====== SCRIPTS (tienda, buscador, carrusel, utilidades) ====== -->
+  <!-- ===== SCRIPTS ===== -->
   <script>
     const PHONE = "543382411473";
 
-    // Logo fallback
+    // Fallback de logo
     const lg = document.getElementById('aoLogo');
     if (lg) lg.addEventListener('error', ()=>{ lg.src = '/logo.png'; });
 
-    // ===== TIENDA =====
+    // ===== Slider HERO (banners) =====
+    (function(){
+      const slider = document.querySelector('.banner-slider');
+      if(!slider) return;
+
+      const track = slider.querySelector('.banner-track');
+      const slides = Array.from(track.children);
+      const prev = slider.querySelector('.banner-nav.prev');
+      const next = slider.querySelector('.banner-nav.next');
+      const dotsWrap = slider.querySelector('.banner-dots');
+
+      slides.forEach((_,i)=>{ const b=document.createElement('button'); if(i===0) b.classList.add('active'); dotsWrap.appendChild(b); });
+      const dots = Array.from(dotsWrap.children);
+
+      let i=0, w=slider.clientWidth, timer=null;
+
+      function setIndex(n){
+        i=(n+slides.length)%slides.length;
+        track.style.transform=`translateX(${-i*w}px)`;
+        dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+      }
+      function nextSlide(){ setIndex(i+1); }
+      function prevSlide(){ setIndex(i-1); }
+      function start(){ stop(); timer=setInterval(nextSlide, 5000); }
+      function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+
+      next.addEventListener('click', ()=>{ nextSlide(); start(); });
+      prev.addEventListener('click', ()=>{ prevSlide(); start(); });
+      dots.forEach((d,idx)=> d.addEventListener('click', ()=>{ setIndex(idx); start(); }));
+
+      // Swipe móvil
+      let sx=0, dx=0;
+      slider.addEventListener('touchstart', e=>{ sx=e.touches[0].clientX; stop(); }, {passive:true});
+      slider.addEventListener('touchmove', e=>{ dx=e.touches[0].clientX - sx; }, {passive:true});
+      slider.addEventListener('touchend', ()=>{ if(Math.abs(dx)>40){ dx<0?nextSlide():prevSlide(); } dx=0; start(); });
+
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      window.addEventListener('resize', ()=>{ w=slider.clientWidth; setIndex(i); });
+
+      setIndex(0); start();
+    })();
+
+    // ===== TIENDA (filtros + buscador) =====
     const data = JSON.parse(document.getElementById('product-data').textContent);
     const order = data.order || ["Insumos","Repuestos","Herramientas","Otros"];
     const items = data.items || [];
@@ -415,19 +507,49 @@
     });
     render("Todos","");
 
-    // ===== Carrusel Opiniones =====
+    // ===== Carrusel Opiniones (2 desktop, 1 mobile) + animación =====
     (function(){
-      const slider = document.querySelector('.slider');
-      if(!slider) return;
-      let idx = 0;
-      const cards = slider.children; const total = cards.length;
-      const go = (dir)=>{ idx=(idx+dir+total)%total; const w=cards[0].getBoundingClientRect().width+16; slider.style.transform=`translateX(${-idx*w}px)`; };
-      document.querySelector('.slide-btn.prev').addEventListener('click', ()=>go(-1));
-      document.querySelector('.slide-btn.next').addEventListener('click', ()=>go(+1));
-      let auto = setInterval(()=>go(+1), 4000);
-      slider.addEventListener('mouseenter', ()=>clearInterval(auto));
-      slider.addEventListener('mouseleave', ()=>auto=setInterval(()=>go(+1), 4000));
-      window.addEventListener('resize', ()=>{ idx=0; slider.style.transform='translateX(0)'; });
+      const wrap = document.querySelector('#opiniones .slider-wrap');
+      if(!wrap) return;
+
+      const slider = wrap.querySelector('.slider');
+      const prev = wrap.querySelector('.slide-btn.prev');
+      const next = wrap.querySelector('.slide-btn.next');
+      const cards = Array.from(slider.children);
+      const total = cards.length;
+      let idx = 0, auto = null;
+
+      function getGap(){
+        const s = getComputedStyle(slider);
+        return parseFloat(s.columnGap || s.gap || 16);
+      }
+
+      function markActive(){
+        const visible = window.innerWidth > 768 ? 2 : 1;
+        cards.forEach(c=>c.classList.remove('is-active'));
+        for(let k=0;k<visible;k++){
+          cards[(idx + k) % total].classList.add('is-active');
+        }
+      }
+
+      function step(){
+        const gap = getGap();
+        const w = cards[0].getBoundingClientRect().width + gap;
+        slider.style.transform = `translateX(${-idx * w}px)`;
+        markActive();
+      }
+
+      function go(d){ idx = (idx + d + total) % total; step(); }
+      function start(){ stop(); auto = setInterval(()=>go(1), 4000); }
+      function stop(){ if(auto){ clearInterval(auto); auto = null; } }
+
+      prev.addEventListener('click', ()=>{ go(-1); start(); });
+      next.addEventListener('click', ()=>{ go(1); start(); });
+      wrap.addEventListener('mouseenter', stop);
+      wrap.addEventListener('mouseleave', start);
+      window.addEventListener('resize', step);
+
+      step(); start();
     })();
   </script>
 </body>
