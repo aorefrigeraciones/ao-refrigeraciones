@@ -1,180 +1,181 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AO Refrigeraciones – Servicio técnico y tienda</title>
-  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AO Refrigeraciones — Servicio técnico y tienda</title>
+  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales en Rufino y zona.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/logo-horizontal.png" as="image">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand nav-logo" aria-label="Inicio AO Refrigeraciones">
-        <img src="/logo-horizontal.png" alt="AO Refrigeraciones" loading="eager">
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand nav-logo" href="/" aria-label="Inicio AO">
+      <img src="/logo-horizontal.png" alt="AO Refrigeraciones" loading="eager">
+    </a>
+
+    <nav class="main-nav" aria-label="Principal">
+      <a href="#quienes">¿Quiénes somos?</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#testimonios">Opiniones</a>
+      <a href="#blog">Blog AO</a>
+      <a class="cta-whatsapp" target="_blank" rel="noopener"
+         href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20hacer%20una%20consulta">
+         <span class="wa-dot"></span> WhatsApp
+      </a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<!-- ================= BANNERS ARRIBA ================= -->
+<section class="hero">
+  <div class="container">
+    <div class="banner-slider" id="bannerSlider" aria-label="Promociones destacadas">
+      <a class="slide" href="#tienda" aria-label="Envíos y promos">
+        <img src="/banner/envios-promos.png?v=2" alt="Envíos a todo el país, cuotas y descuentos">
+      </a>
+      <a class="slide" href="#tienda" aria-label="Tienda AO">
+        <img src="/banner/tienda.png?v=2" alt="Insumos, repuestos y herramientas">
+      </a>
+      <a class="slide" href="#inelro" aria-label="Servicio Técnico INELRO">
+        <img src="/banner/inelro.png?v=2" alt="Servicio Técnico Oficial INELRO">
       </a>
 
-      <nav class="main-nav" aria-label="Principal">
-        <a href="#quienes">¿Quiénes somos?</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#tienda">Tienda</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#contacto">Contacto</a>
-        <a class="cta-whatsapp" href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">
-          <span class="wa-dot"></span> WhatsApp
-        </a>
-      </nav>
-      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <button class="nav prev" id="prevBanner" aria-label="Anterior">‹</button>
+      <button class="nav next" id="nextBanner" aria-label="Siguiente">›</button>
+      <div class="dots" id="bannerDots" aria-hidden="true"></div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ================ BANNERS (arriba, horizontales) ================ -->
-  <section class="hero">
-    <div class="container">
-      <div class="banner-slider" id="bannerSlider" aria-label="Promociones destacadas">
-        <!-- Cada slide es 100% clickeable -->
-        <a class="slide" href="#tienda" aria-label="Envíos y promos">
-          <img src="/banner/envios-promos.png?v=2" alt="Envío a todo el país, cuotas y descuentos">
-        </a>
-        <a class="slide" href="#tienda" aria-label="Tienda AO">
-          <img src="/banner/tienda.png?v=2" alt="Insumos, repuestos y herramientas">
-        </a>
-        <a class="slide" href="#inelro" aria-label="Servicio Técnico INELRO">
-          <img src="/banner/inelro.png?v=2" alt="Servicio Técnico Oficial INELRO">
-        </a>
-
-        <!-- Controles -->
-        <button class="nav prev" id="prevBanner" aria-label="Anterior">‹</button>
-        <button class="nav next" id="nextBanner" aria-label="Siguiente">›</button>
-        <div class="dots" id="bannerDots" aria-hidden="true"></div>
+<!-- ================= HERO / CTA ================= -->
+<section class="masthead">
+  <div class="container masthead-inner">
+    <div class="masthead-copy">
+      <h1>Expertos en refrigeración<br>para el hogar y el comercio</h1>
+      <p class="lead">
+        Instalación, mantenimiento y reparación de <strong>aires acondicionados</strong> y <strong>cámaras frigoríficas</strong>.<br>
+        Servicio técnico para equipos <strong>familiares</strong> y <strong>comerciales</strong>.
+      </p>
+      <div class="masthead-cta">
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20pedir%20turno">Pedir turno</a>
+        <a class="btn btn-ghost" href="#tienda">Ver tienda</a>
       </div>
+      <ul class="pills">
+        <li><span class="pill-title">Sólida experiencia</span><span class="pill-sub">en refrigeración</span></li>
+        <li><span class="pill-title">Trabajos garantizados</span><span class="pill-sub">prolijos y seguros</span></li>
+        <li><span class="pill-title">24–48 h</span><span class="pill-sub">turnos rápidos</span></li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= HERO PRINCIPAL ================= -->
-  <section class="masthead">
-    <div class="container masthead-inner">
-      <div class="masthead-copy">
-        <h1>Expertos en refrigeración<br>para el hogar y el comercio</h1>
-        <p class="lead">
-          Instalación, mantenimiento y reparación de <strong>aires acondicionados</strong> y <strong>cámaras frigoríficas</strong>.<br>
-          Servicio técnico para equipos <strong>familiares</strong> y <strong>comerciales</strong>.
-        </p>
-        <div class="masthead-cta">
-          <a class="btn btn-primary" href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20pedir%20turno" target="_blank" rel="noopener">Pedir turno</a>
-          <a class="btn btn-ghost" href="#tienda">Ver tienda</a>
-        </div>
+<!-- ================= QUIÉNES SOMOS ================= -->
+<section id="quienes" class="section">
+  <div class="container">
+    <header class="section-hd">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos AO Refrigeraciones, taller en <strong>Rufino (Santa Fe)</strong> — Maestros Rufinenses 536. Trato cercano, atención personalizada y soluciones confiables.</p>
+    </header>
 
-        <ul class="pills">
-          <li><span class="pill-title">Sólida experiencia</span><span class="pill-sub">en refrigeración</span></li>
-          <li><span class="pill-title">Trabajos garantizados</span><span class="pill-sub">prolijos y seguros</span></li>
-          <li><span class="pill-title">24–48 h</span><span class="pill-sub">turnos rápidos</span></li>
-        </ul>
-      </div>
+    <div class="cards-3">
+      <article class="feature">
+        <h3>Repuestos originales</h3>
+        <p>Usamos repuestos 100% originales cuando corresponde. Si no lo tenemos, <strong>te lo conseguimos</strong>.</p>
+      </article>
+      <article class="feature">
+        <h3>Trabajos garantizados</h3>
+        <p>Calidad y prolijidad en cada intervención para que tu equipo rinda al máximo.</p>
+      </article>
+      <article class="feature">
+        <h3>Atención personalizada</h3>
+        <p>Asesoramiento por WhatsApp para tomar la mejor decisión en cada caso.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= ¿QUIÉNES SOMOS? ================= -->
-  <section id="quienes" class="section">
-    <div class="container">
-      <header class="section-hd">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos AO Refrigeraciones, taller en <strong>Rufino (Santa Fe)</strong> — Maestros Rufinenses 536. Brindamos soluciones confiables en refrigeración con trato cercano y atención personalizada.</p>
-      </header>
-      <div class="cards-3">
-        <article class="feature">
-          <h3>Repuestos originales</h3>
-          <p>Trabajamos con repuestos 100% originales de fábrica cuando corresponde. Si no lo tenemos, te lo conseguimos.</p>
-        </article>
-        <article class="feature">
-          <h3>Trabajos garantizados</h3>
-          <p>Calidad y prolijidad en cada intervención, para que tu equipo rinda al máximo.</p>
-        </article>
-        <article class="feature">
-          <h3>Atención personalizada</h3>
-          <p>Te asesoramos por WhatsApp para que tomes la mejor decisión en cada caso.</p>
-        </article>
-      </div>
+<!-- ================= SERVICIOS ================= -->
+<section id="servicios" class="section alt">
+  <div class="container">
+    <header class="section-hd">
+      <h2>Servicios técnicos</h2>
+      <p>Instalación, mantenimiento y reparación para uso familiar y comercial.</p>
+    </header>
+
+    <div class="cards-4">
+      <article class="service">
+        <h3>Instalación de aires acondicionados</h3>
+        <p>Colocación profesional con materiales adecuados y seguimiento.</p>
+      </article>
+      <article class="service">
+        <h3>Mantenimiento y reparación de aires</h3>
+        <p>Limpiezas profundas, diagnóstico y reparación integral.</p>
+      </article>
+      <article class="service">
+        <h3>Reparación de equipos familiares</h3>
+        <p>Heladeras, freezers y más. Técnicos especializados.</p>
+      </article>
+      <article class="service">
+        <h3>Cámaras frigoríficas</h3>
+        <p>Instalación, mantenimiento y reparación para uso comercial.</p>
+      </article>
     </div>
-  </section>
 
-  <!-- ================= SERVICIOS ================= -->
-  <section id="servicios" class="section alt">
-    <div class="container">
-      <header class="section-hd">
-        <h2>Servicios técnicos</h2>
-        <p>Instalación, mantenimiento y reparación para uso familiar y comercial.</p>
-      </header>
+    <p class="footnote">Refrigeración para transporte: <em>próximamente</em>.</p>
+  </div>
+</section>
 
-      <div class="cards-4">
-        <article class="service">
-          <h3>Instalación de aires acondicionados</h3>
-          <p>Colocación profesional con materiales adecuados y seguimiento.</p>
-        </article>
-        <article class="service">
-          <h3>Mantenimiento y reparación de aires</h3>
-          <p>Limpiezas profundas, diagnóstico y reparación integral.</p>
-        </article>
-        <article class="service">
-          <h3>Reparación de equipos familiares</h3>
-          <p>Heladeras, freezers y más. Técnicos especializados.</p>
-        </article>
-        <article class="service">
-          <h3>Cámaras frigoríficas</h3>
-          <p>Instalación, mantenimiento y reparación para uso comercial.</p>
-        </article>
-      </div>
-
-      <p class="footnote">Refrigeración para transporte: <em>próximamente</em>.</p>
+<!-- ================= INELRO ================= -->
+<section id="inelro" class="section">
+  <div class="container inelro-wrap">
+    <div class="inelro-logo">
+      <img src="/inelro-logo.png" alt="INELRO" loading="lazy">
     </div>
-  </section>
-
-  <!-- ================= INELRO ================= -->
-  <section id="inelro" class="section">
-    <div class="container inelro-wrap">
-      <div class="inelro-logo">
-        <img src="/inelro-logo.png" alt="INELRO" loading="lazy">
-      </div>
-      <div class="inelro-copy">
-        <h2>Servicio Técnico Oficial <span class="nowrap">INELRO</span></h2>
-        <ul class="checklist">
-          <li>Atendemos Rufino y zona</li>
-          <li>Repuestos originales de fábrica, disponibles a pedido</li>
-          <li>Atención de reclamos en garantía y fuera de garantía</li>
-        </ul>
-        <a class="btn btn-primary" href="https://wa.me/543382411473?text=Consulta%20por%20INELRO" target="_blank" rel="noopener">Consultar por INELRO</a>
-      </div>
+    <div class="inelro-copy">
+      <h2>Servicio Técnico Oficial <span class="nowrap">INELRO</span></h2>
+      <ul class="checklist">
+        <li>Atendemos Rufino y zona</li>
+        <li>Repuestos originales de fábrica, disponibles a pedido</li>
+        <li>Atención de reclamos en garantía y fuera de garantía</li>
+      </ul>
+      <a class="btn btn-primary" target="_blank" rel="noopener"
+         href="https://wa.me/543382411473?text=Consulta%20por%20INELRO">Consultar por INELRO</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= TIENDA ================= -->
-  <section id="tienda" class="section alt">
-    <div class="container">
-      <header class="section-hd">
-        <h2>Insumos y repuestos</h2>
-        <p>Venta de insumos, repuestos y herramientas. Envíos a todo el país. <strong>Consultá por stock</strong>.</p>
-      </header>
+<!-- ================= TIENDA ================= -->
+<section id="tienda" class="section alt">
+  <div class="container">
+    <header class="section-hd">
+      <h2>Insumos y repuestos</h2>
+      <p>Venta de insumos, repuestos y herramientas. Envíos a todo el país. <strong>Consultá por stock</strong>.</p>
+    </header>
 
-      <!-- Filtros + búsqueda -->
-      <div class="shop-controls">
-        <div class="filters">
-          <button class="chip active" data-filter="all">Todos</button>
-          <button class="chip" data-filter="Insumos">Insumos</button>
-          <button class="chip" data-filter="Repuestos">Repuestos</button>
-          <button class="chip" data-filter="Herramientas">Herramientas</button>
-        </div>
-        <input id="shopSearch" class="search" type="search" placeholder="Buscar por nombre o código…" aria-label="Buscar productos">
+    <!-- Filtros + búsqueda -->
+    <div class="shop-controls">
+      <div class="filters">
+        <button class="chip active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="Insumos">Insumos</button>
+        <button class="chip" data-filter="Repuestos">Repuestos</button>
+        <button class="chip" data-filter="Herramientas">Herramientas</button>
       </div>
+      <input id="shopSearch" class="search" type="search" placeholder="Buscar por nombre o código…" aria-label="Buscar productos">
+    </div>
 
-      <!-- Grid productos (SIN productos inventados). 
-           Agregá tus productos duplicando la plantilla comentada debajo. -->
-      <div id="shopGrid" class="grid-products"></div>
-
-      <!-- PLANTILLA (comentada) PARA AGREGAR PRODUCTOS MANUALMENTE
+    <!-- GRID DE PRODUCTOS: queda vacío para que vos agregues los tuyos. -->
+    <div id="shopGrid" class="grid-products">
+      <!--
+      EJEMPLO (copiar/pegar cambiando data-cat / data-code / textos)
       <article class="product-card" data-cat="Insumos" data-code="PK-001">
         <div class="product-img ph"></div>
         <h3 class="product-name">PractiKit instalación split 3 mts</h3>
@@ -188,189 +189,204 @@
         </div>
       </article>
       -->
-
-      <div class="center mt-24">
-        <a class="btn btn-primary" href="https://wa.me/543382411473?text=Hola%20AO%2C%20busco%20un%20producto%20de%20la%20tienda" target="_blank" rel="noopener">Asesoramiento por WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA WHATSAPP ================= -->
-  <section class="section cta-wa">
-    <div class="container center">
-      <h2>¿Necesitás ayuda ahora?</h2>
-      <p>Te asesoramos por WhatsApp y coordinamos la visita.</p>
-      <a class="btn btn-whatsapp" href="https://wa.me/543382411473?text=Hola%20AO%2C%20necesito%20asesoramiento" target="_blank" rel="noopener">
-        Escribinos por WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <!-- ================= TESTIMONIOS ================= -->
-  <section id="testimonios" class="section alt">
-    <div class="container">
-      <header class="section-hd">
-        <h2>Opiniones de clientes</h2>
-        <p>Comentarios de vecinos de Rufino y zona.</p>
-      </header>
-
-      <div class="reviews">
-        <figure class="review">
-          <blockquote>“Gracias Alberto, me recuperaste la heladera que me habían dicho que no servía más.”</blockquote>
-          <figcaption>— Marta, Rufino</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>“Tres técnicos vieron mi aire y ninguno pudo repararlo. ¡AO lo dejó funcionando de nuevo!”</blockquote>
-          <figcaption>— Diego, Rufino</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>“Trabajo prolijo, rápido y con buena onda. Súper recomendables.”</blockquote>
-          <figcaption>— Laura, Rufino</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>“Coordinamos por WhatsApp, llegaron en horario y quedó impecable.”</blockquote>
-          <figcaption>— Nicolás, Rufino</figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>“Me asesoraron para elegir el equipo correcto para mi local. Excelente.”</blockquote>
-          <figcaption>— Belén, Rufino</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer id="contacto" class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="/logo-isotipo.png" alt="AO Refrigeraciones">
-        <p>Maestros Rufinenses 536, Rufino, Santa Fe</p>
-        <p><a href="https://wa.me/543382411473" target="_blank" rel="noopener">+54 3382 411473</a></p>
-      </div>
-
-      <nav class="footer-nav">
-        <h4>Secciones</h4>
-        <a href="#quienes">¿Quiénes somos?</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#tienda">Tienda</a>
-        <a href="#testimonios">Opiniones</a>
-        <a href="#inelro">INELRO</a>
-      </nav>
-
-      <div class="footer-social">
-        <h4>Seguinos</h4>
-        <p>
-          <a href="https://www.facebook.com/share/17gFcDxork/" target="_blank" rel="noopener" aria-label="Facebook">
-            Facebook
-          </a>
-          <span class="dot">·</span>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-            Instagram
-          </a>
-        </p>
-        <p><a id="blog" href="#blog">Blog AO</a></p>
-      </div>
     </div>
 
-    <div class="container footbar">
-      <small>© AO Refrigeraciones. Todos los derechos reservados.</small>
+    <div class="center mt-24">
+      <a class="btn btn-primary" target="_blank" rel="noopener"
+         href="https://wa.me/543382411473?text=Hola%20AO%2C%20busco%20un%20producto%20de%20la%20tienda">Asesoramiento por WhatsApp</a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- ============== JS: menú mobile + slider + tienda (filtros/busca) ============== -->
-  <script>
-    // Menú mobile
-    (function(){
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.querySelector('.main-nav');
-      if(!btn || !nav) return;
-      btn.addEventListener('click', ()=> nav.classList.toggle('open'));
-    })();
+<!-- ================= GALERÍA / TRABAJOS ================= -->
+<section id="trabajos" class="section">
+  <div class="container">
+    <header class="section-hd">
+      <h2>Nuestros trabajos</h2>
+      <p>Algunas fotos de instalaciones y reparaciones recientes.</p>
+    </header>
 
-    // Slider de banners (1 por vez)
-    (function() {
-      const slider = document.getElementById('bannerSlider');
-      if (!slider) return;
+    <div class="gallery">
+      <!-- Subí tus fotos a /trabajos/1.jpg … y dejá las que tengas -->
+      <img src="/trabajos/1.jpg" alt="Trabajo 1" loading="lazy">
+      <img src="/trabajos/2.jpg" alt="Trabajo 2" loading="lazy">
+      <img src="/trabajos/3.jpg" alt="Trabajo 3" loading="lazy">
+      <img src="/trabajos/4.jpg" alt="Trabajo 4" loading="lazy">
+      <img src="/trabajos/5.jpg" alt="Trabajo 5" loading="lazy">
+      <img src="/trabajos/6.jpg" alt="Trabajo 6" loading="lazy">
+      <img src="/trabajos/7.jpg" alt="Trabajo 7" loading="lazy">
+      <img src="/trabajos/8.jpg" alt="Trabajo 8" loading="lazy">
+    </div>
+  </div>
+</section>
 
-      const slides = Array.from(slider.querySelectorAll('.slide'));
-      const prev = document.getElementById('prevBanner');
-      const next = document.getElementById('nextBanner');
-      const dotsWrap = document.getElementById('bannerDots');
+<!-- ================= CTA WHATSAPP ================= -->
+<section class="section cta-wa">
+  <div class="container center">
+    <h2>¿Necesitás ayuda ahora?</h2>
+    <p>Te asesoramos por WhatsApp y coordinamos la visita.</p>
+    <a class="btn btn-whatsapp" target="_blank" rel="noopener"
+       href="https://wa.me/543382411473?text=Hola%20AO%2C%20necesito%20asesoramiento">
+      Escribinos por WhatsApp
+    </a>
+  </div>
+</section>
 
-      // Crear puntos
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.setAttribute('aria-label', 'Ir al banner ' + (i + 1));
-        dotsWrap.appendChild(b);
+<!-- ================= TESTIMONIOS ================= -->
+<section id="testimonios" class="section alt">
+  <div class="container">
+    <header class="section-hd">
+      <h2>Opiniones de clientes</h2>
+      <p>Comentarios de vecinos de Rufino y zona.</p>
+    </header>
+
+    <div class="reviews">
+      <!-- Dejá los tuyos y sumé los que propusiste -->
+      <figure class="review">
+        <blockquote>“Gracias Alberto, me recuperaste la heladera que me habían dicho que no servía más.”</blockquote>
+        <figcaption>— Marta, Rufino</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>“Tres técnicos vieron mi aire y ninguno pudo repararlo. ¡AO lo dejó funcionando de nuevo!”</blockquote>
+        <figcaption>— Diego, Rufino</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>“Trabajo prolijo, rápido y con buena onda. Súper recomendables.”</blockquote>
+        <figcaption>— Laura, Rufino</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>“Coordinamos por WhatsApp, llegaron en horario y quedó impecable.”</blockquote>
+        <figcaption>— Nicolás, Rufino</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>“Me asesoraron para elegir el equipo correcto para mi local. Excelente.”</blockquote>
+        <figcaption>— Belén, Rufino</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAPA ================= -->
+<section class="section">
+  <div class="container">
+    <header class="section-hd">
+      <h2>¿Dónde estamos?</h2>
+      <p>Maestros Rufinenses 536, Rufino, Santa Fe.</p>
+    </header>
+    <div class="map-wrap">
+      <iframe class="map"
+        src="https://www.google.com/maps?q=Maestros%20Rufinenses%20536%2C%20Rufino%2C%20Santa%20Fe&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa AO Refrigeraciones"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="/logo-isotipo.png" alt="AO Refrigeraciones">
+      <p>Maestros Rufinenses 536, Rufino, Santa Fe</p>
+      <p><a href="https://wa.me/543382411473" target="_blank" rel="noopener">+54 3382 411473</a></p>
+    </div>
+
+    <nav class="footer-nav">
+      <h4>Secciones</h4>
+      <a href="#quienes">¿Quiénes somos?</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#testimonios">Opiniones</a>
+      <a href="#inelro">INELRO</a>
+    </nav>
+
+    <div class="footer-social">
+      <h4>Seguinos</h4>
+      <p class="icons">
+        <a class="icon" href="https://www.facebook.com/share/17gFcDxork/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <!-- FB SVG -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#1877F2" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12"/></svg>
+        </a>
+        <a class="icon" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <!-- IG SVG -->
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><linearGradient id="g" x1="0" x2="1" y1="1" y2="0"><stop offset="0" stop-color="#f58529"/><stop offset=".5" stop-color="#dd2a7b"/><stop offset="1" stop-color="#515bd4"/></linearGradient><path fill="url(#g)" d="M12 2.2c3 0 3.4 0 4.6.1 1.1.1 1.7.2 2 .3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.3.2.9.3 2 .1 1.2.1 1.6.1 4.6s0 3.4-.1 4.6c-.1 1.1-.2 1.7-.3 2-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.3.1-.9.2-2 .3-1.2.1-1.6.1-4.6.1s-3.4 0-4.6-.1c-1.1-.1-1.7-.2-2-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.3-.2-.9-.3-2C2.2 15.4 2.2 15 2.2 12s0-3.4.1-4.6c.1-1.1.2-1.7.3-2 .2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.3-.1.9-.2 2-.3C8.6 2.2 9 2.2 12 2.2m0 1.8c-3 0-3.3 0-4.5.1-1 .1-1.5.2-1.8.3-.4.2-.6.3-.9.6-.3.3-.4.5-.6.9-.1.3-.2.8-.3 1.8-.1 1.2-.1 1.5-.1 4.5s0 3.3.1 4.5c.1 1 .2 1.5.3 1.8.2.4.3.6.6.9.3.3.5.4.9.6.3.1.8.2 1.8.3 1.2.1 1.5.1 4.5.1s3.3 0 4.5-.1c1-.1 1.5-.2 1.8-.3.4-.2.6-.3.9-.6.3-.3.4-.5.6-.9.1-.3.2-.8.3-1.8.1-1.2.1-1.5.1-4.5s0-3.3-.1-4.5c-.1-1-.2-1.5-.3-1.8-.2-.4-.3-.6-.6-.9-.3-.3-.5-.4-.9-.6-.3-.1-.8-.2-1.8-.3-1.2-.1-1.5-.1-4.5-.1Zm0 2.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2Zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.2-.9a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"/></svg>
+        </a>
+      </p>
+      <p><a id="blog" href="#blog">Blog AO</a></p>
+    </div>
+  </div>
+
+  <div class="container footbar">
+    <small>© AO Refrigeraciones. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // Menú mobile
+  (function(){
+    const btn=document.querySelector('.nav-toggle');
+    const nav=document.querySelector('.main-nav');
+    if(!btn||!nav) return;
+    btn.addEventListener('click',()=>nav.classList.toggle('open'));
+  })();
+
+  // Slider banners
+  (function(){
+    const wrap=document.getElementById('bannerSlider');
+    if(!wrap) return;
+    const slides=[...wrap.querySelectorAll('.slide')];
+    const prev=document.getElementById('prevBanner');
+    const next=document.getElementById('nextBanner');
+    const dotsWrap=document.getElementById('bannerDots');
+    dotsWrap.innerHTML='';
+    slides.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.setAttribute('aria-label','Ir al banner '+(i+1));
+      dotsWrap.appendChild(b);
+    });
+    const dots=[...dotsWrap.querySelectorAll('button')];
+    let idx=0,timer=null;
+    const show=i=>{
+      idx=(i+slides.length)%slides.length;
+      slides.forEach((s,k)=>s.classList.toggle('active',k===idx));
+      dots.forEach((d,k)=>d.classList.toggle('active',k===idx));
+    };
+    const nextS=()=>show(idx+1);
+    const prevS=()=>show(idx-1);
+    next.addEventListener('click',()=>{nextS();restart();});
+    prev.addEventListener('click',()=>{prevS();restart();});
+    dots.forEach((d,k)=>d.addEventListener('click',()=>{show(k);restart();}));
+    const start=()=>timer=setInterval(nextS,5000);
+    const stop =()=>{clearInterval(timer);timer=null;};
+    const restart=()=>{stop();start();};
+    show(0); start(); wrap.addEventListener('mouseenter',stop); wrap.addEventListener('mouseleave',start);
+  })();
+
+  // Tienda: filtros + búsqueda (sobre los cards del DOM)
+  (function(){
+    const grid=document.getElementById('shopGrid');
+    const chips=document.querySelectorAll('.chip[data-filter]');
+    const search=document.getElementById('shopSearch');
+    if(!grid) return;
+    const cards=[...grid.querySelectorAll('.product-card')];
+    const apply=()=>{
+      const q=(search?.value||'').toLowerCase().trim();
+      const active=document.querySelector('.chip.active')?.dataset.filter||'all';
+      cards.forEach(card=>{
+        const name=(card.querySelector('.product-name')?.textContent||'').toLowerCase();
+        const code=(card.dataset.code||'').toLowerCase();
+        const cat=(card.dataset.cat||'');
+        const byCat=(active==='all'||cat===active);
+        const byText=(!q||name.includes(q)||code.includes(q));
+        card.style.display=(byCat&&byText)?'':'none';
       });
+    };
+    chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('active'));c.classList.add('active');apply();}));
+    search?.addEventListener('input',apply);
+    apply();
+  })();
+</script>
 
-      const dots = Array.from(dotsWrap.querySelectorAll('button'));
-      let idx = 0;
-      let timer = null;
-
-      function show(i) {
-        idx = (i + slides.length) % slides.length;
-        slides.forEach((s, k) => s.classList.toggle('active', k === idx));
-        dots.forEach((d, k) => d.classList.toggle('active', k === idx));
-      }
-      function nextSlide() { show(idx + 1); }
-      function prevSlide() { show(idx - 1); }
-
-      next.addEventListener('click', () => { nextSlide(); restart(); });
-      prev.addEventListener('click', () => { prevSlide(); restart(); });
-      dots.forEach((d, k) => d.addEventListener('click', () => { show(k); restart(); }));
-
-      function start() { timer = setInterval(nextSlide, 5000); }
-      function stop()  { clearInterval(timer); timer = null; }
-      function restart(){ stop(); start(); }
-
-      show(0);
-      start();
-
-      slider.addEventListener('mouseenter', stop);
-      slider.addEventListener('mouseleave', start);
-    })();
-
-    // ======= TIENDA: filtros y búsqueda (sobre cards en el DOM) =======
-    (function(){
-      const grid   = document.getElementById('shopGrid');
-      const chips  = document.querySelectorAll('.chip[data-filter]');
-      const search = document.getElementById('shopSearch');
-
-      if(!grid) return;
-
-      // Si no hay productos cargados, no mostramos nada inventado.
-      // (Dejamos grid vacío y sólo operan filtros/búsqueda cuando agregues cards.)
-      let cards = Array.from(grid.querySelectorAll('.product-card'));
-
-      function apply(){
-        const q = (search?.value || '').trim().toLowerCase();
-        const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
-
-        cards.forEach(card=>{
-          const name = (card.querySelector('.product-name')?.textContent || '').toLowerCase();
-          const code = (card.dataset.code || '').toLowerCase();
-          const cat  = (card.dataset.cat  || '');
-          const byCat = (active==='all' || cat===active);
-          const byText = (!q || name.includes(q) || code.includes(q));
-          card.style.display = (byCat && byText) ? '' : 'none';
-        });
-      }
-
-      chips.forEach(c=>{
-        c.addEventListener('click', ()=>{
-          chips.forEach(x=>x.classList.remove('active'));
-          c.classList.add('active');
-          apply();
-        });
-      });
-
-      search?.addEventListener('input', apply);
-
-      // Inicial
-      apply();
-    })();
-  </script>
 </body>
 </html>
