@@ -3,15 +3,47 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>AO Refrigeraciones — Servicio técnico y tienda</title>
-  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Servicio técnico para equipos familiares y comerciales en Rufino y zona. Venta de insumos, repuestos y herramientas.">
+  <title>AO Refrigeraciones — Aire acondicionado, refrigeración comercial e INELRO/Briket</title>
+  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados y cámaras frigoríficas. Refrigeración comercial, servicio oficial INELRO y Briket. Venta de insumos, repuestos y herramientas en Rufino y zona.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/logo-horizontal.png" as="image">
   <link rel="stylesheet" href="/styles.css">
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"AO Refrigeraciones",
+    "image":"https://tu-dominio.com/logo-horizontal.png",
+    "url":"https://tu-dominio.com/",
+    "telephone":"+54 3382 411473",
+    "email":"Aorefrigeraciones@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Maestros Rufinenses 536",
+      "addressLocality":"Rufino",
+      "addressRegion":"Santa Fe",
+      "addressCountry":"AR"
+    },
+    "areaServed":"Rufino y zona",
+    "sameAs":[
+      "https://www.instagram.com/ao.refrigeraciones",
+      "https://www.facebook.com/share/17gFcDxork/"
+    ],
+    "openingHoursSpecification":[{
+      "@type":"OpeningHoursSpecification",
+      "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens":"09:00",
+      "closes":"19:00"
+    }],
+    "description":"Servicio técnico de refrigeración: aires acondicionados, cámaras frigoríficas, INELRO y Briket oficial. Venta de insumos, repuestos y herramientas."
+  }
+  </script>
+  <link rel="canonical" href="https://tu-dominio.com/">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ======= HEADER ======= -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a class="brand nav-logo" href="/" aria-label="Inicio AO">
@@ -21,11 +53,11 @@
     <nav class="main-nav" aria-label="Principal">
       <a href="#quienes">¿Quiénes somos?</a>
       <a href="#servicios">Nuestros servicios</a>
+      <a href="#oficiales">Servicios oficiales</a>
       <a href="#tienda">Tienda AO</a>
       <a href="#accion">AO en acción</a>
       <a href="#blog">Blog AO</a>
       <a href="#opiniones">Opiniones</a>
-      <a href="#inelro">INELRO</a>
       <a class="cta-whatsapp" target="_blank" rel="noopener"
          href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20hacer%20una%20consulta">
          <span class="wa-dot"></span> WhatsApp
@@ -35,7 +67,7 @@
   </div>
 </header>
 
-<!-- ================= BANNERS ARRIBA ================= -->
+<!-- ======= BANNERS ARRIBA ======= -->
 <section class="hero">
   <div class="container">
     <div class="banner-slider" id="bannerSlider" aria-label="Promociones destacadas">
@@ -45,7 +77,7 @@
       <a class="slide" href="#tienda" aria-label="Tienda AO">
         <img src="/banner/tienda.png?v=2" alt="Insumos, repuestos y herramientas">
       </a>
-      <a class="slide" href="#inelro" aria-label="Servicio Técnico INELRO">
+      <a class="slide" href="#oficiales" aria-label="Servicios oficiales INELRO y Briket">
         <img src="/banner/inelro.png?v=2" alt="Servicio Técnico Oficial INELRO">
       </a>
 
@@ -56,7 +88,7 @@
   </div>
 </section>
 
-<!-- ================= HERO / CTA ================= -->
+<!-- ======= HERO/CTA ======= -->
 <section class="masthead">
   <div class="container masthead-inner">
     <div class="masthead-copy">
@@ -66,37 +98,28 @@
         Reparación y mantenimiento de <strong>equipos familiares</strong> y <strong>comerciales</strong>.<br>
         <strong>Venta de insumos, repuestos y herramientas.</strong>
       </p>
+
+      <div class="meta-line">
+        <strong>Trabajos garantizados</strong> · <strong>Turnos rápidos 24–48 h</strong> · <strong>Venta de insumos, repuestos y herramientas</strong>
+      </div>
+
       <div class="masthead-cta">
         <a class="btn btn-primary" target="_blank" rel="noopener"
            href="https://wa.me/543382411473?text=Hola%20AO%2C%20quiero%20pedir%20turno">Pedir turno</a>
         <a class="btn btn-ghost" href="#tienda">Ver tienda</a>
       </div>
 
-      <ul class="pills">
-        <li class="pill">
-          <span class="pill-title">Sólida experiencia</span>
-          <span class="pill-sub">en refrigeración</span>
-        </li>
-        <li class="pill">
-          <span class="pill-title">Trabajos garantizados</span>
-          <span class="pill-sub">prolijos y seguros</span>
-        </li>
-        <li class="pill">
-          <span class="pill-title">24–48 h</span>
-          <span class="pill-sub">turnos rápidos</span>
-        </li>
-      </ul>
+      <!-- (Rectángulos/pills eliminados como pediste) -->
     </div>
   </div>
 </section>
 
-<!-- ====== SEPARADOR ====== -->
 <hr class="divider">
 
-<!-- ================= QUIÉNES SOMOS ================= -->
+<!-- ======= ¿QUIÉNES SOMOS? ======= -->
 <section id="quienes" class="section">
   <div class="container">
-    <header class="section-hd">
+    <header class="section-hd center">
       <h2>¿Quiénes somos?</h2>
     </header>
 
@@ -116,7 +139,7 @@
   </div>
 </section>
 
-<!-- ================= NUESTROS SERVICIOS ================= -->
+<!-- ======= NUESTROS SERVICIOS ======= -->
 <section id="servicios" class="section alt services">
   <div class="container">
     <header class="section-hd center">
@@ -129,31 +152,26 @@
         <h3>Instalación de Aires Acondicionados</h3>
         <p>Herramientas profesionales y exigencias de garantía de cada fabricante. Presurización con nitrógeno, vacío con vacuómetro y manifold digital para mayor eficiencia y vida útil.</p>
       </article>
-
       <article class="service-card">
         <div class="icon">🧼</div>
         <h3>Mantenimiento de Aires Acondicionados</h3>
         <p>Limpieza completa y sanitización interna para aire más puro y mejor rendimiento. Mantenimiento regular para ahorrar energía y prevenir fallas.</p>
       </article>
-
       <article class="service-card">
         <div class="icon">⚙️</div>
         <h3>Reparación de Aires Acondicionados</h3>
         <p>Diagnóstico de fallas eléctricas, fugas y problemas de rendimiento. Procedimientos técnicos y herramientas profesionales para un funcionamiento seguro y duradero.</p>
       </article>
-
       <article class="service-card">
         <div class="icon">🧊</div>
         <h3>Reparación de Heladeras y Freezers</h3>
         <p>Reparación de fugas, limpieza del circuito, vacío y carga de gas. Reemplazo de motores, burletes, filtros, capilares, plaquetas, forzadores y bimetales. Control con datalogger.</p>
       </article>
-
       <article class="service-card">
         <div class="icon">🏬</div>
         <h3>Refrigeración Comercial</h3>
         <p>Servicio técnico para heladeras mostrador, vitrinas, máquinas de hielo, fabricadoras de helado y enfriadoras. Asistencia programada para evitar fallas y prolongar la vida útil.</p>
       </article>
-
       <article class="service-card">
         <div class="icon">❄️</div>
         <h3>Cámaras Frigoríficas</h3>
@@ -163,50 +181,61 @@
   </div>
 </section>
 
-<!-- ================= INELRO ================= -->
-<section id="inelro" class="section">
-  <div class="container inelro-wrap">
-    <div class="inelro-logo">
-      <img src="/inelro-logo.png" alt="INELRO" loading="lazy">
+<!-- ======= SERVICIOS TÉCNICOS OFICIALES (AZUL) ======= -->
+<section id="oficiales" class="section official">
+  <div class="container">
+    <header class="section-hd center white">
+      <h2>Servicios técnicos oficiales</h2>
+      <p>Somos servicio técnico oficial de:</p>
+    </header>
+
+    <div class="brand-logos">
+      <img src="/inelro-logo.png" alt="INELRO" class="brand-logo">
+      <img src="/logos/logo-briket.png" alt="BRIKET" class="brand-logo">
     </div>
-    <div class="inelro-copy">
-      <header class="section-hd">
-        <h2>Somos Servicio Técnico Oficial de INELRO</h2>
-      </header>
-      <ul class="checklist">
-        <li>Atendemos <strong>reclamos por garantía</strong> y también <strong>fuera de garantía</strong>.</li>
-        <li>Trabajamos con <strong>repuestos originales</strong> directos de fábrica.</li>
-        <li><strong>Vendemos repuestos originales</strong> — consultá stock.</li>
-      </ul>
-      <a class="btn btn-primary" target="_blank" rel="noopener"
-         href="https://wa.me/543382411473?text=Consulta%20por%20INELRO">Consultar por INELRO</a>
+
+    <ul class="official-list">
+      <li>Atendemos <strong>reclamos por garantía</strong> y también <strong>fuera de garantía</strong>.</li>
+      <li>Trabajamos con <strong>repuestos originales</strong> directos de fábrica.</li>
+      <li><strong>Vendemos repuestos originales</strong> — consultá stock.</li>
+    </ul>
+
+    <div class="center">
+      <a class="btn btn-light" target="_blank" rel="noopener"
+         href="https://wa.me/543382411473?text=Consulta%20por%20servicios%20oficiales">Consultar ahora</a>
     </div>
   </div>
 </section>
 
-<!-- ================= AO EN ACCIÓN ================= -->
+<!-- ======= AO EN ACCIÓN (slider 1:1) ======= -->
 <section id="accion" class="section">
   <div class="container">
-    <header class="section-hd">
+    <header class="section-hd center">
       <h2>AO en acción</h2>
       <p>Te mostramos un poco de lo que somos: nuestro taller, las herramientas con las que trabajamos y algunos de los trabajos que realizamos día a día.</p>
     </header>
 
-    <div class="gallery">
-      <img src="/accion/1.jpg" alt="AO en acción 1" loading="lazy">
-      <img src="/accion/2.jpg" alt="AO en acción 2" loading="lazy">
-      <img src="/accion/3.jpg" alt="AO en acción 3" loading="lazy">
-      <img src="/accion/4.jpg" alt="AO en acción 4" loading="lazy">
-      <img src="/accion/5.jpg" alt="AO en acción 5" loading="lazy">
-      <img src="/accion/6.jpg" alt="AO en acción 6" loading="lazy">
+    <div class="action-slider" aria-label="Galería AO en acción">
+      <button class="as-btn prev" aria-label="Anterior">‹</button>
+      <div class="as-viewport">
+        <div class="as-track">
+          <div class="as-slide"><img src="/accion/1.jpg" alt="AO en acción 1" loading="lazy"></div>
+          <div class="as-slide"><img src="/accion/2.jpg" alt="AO en acción 2" loading="lazy"></div>
+          <div class="as-slide"><img src="/accion/3.jpg" alt="AO en acción 3" loading="lazy"></div>
+          <div class="as-slide"><img src="/accion/4.jpg" alt="AO en acción 4" loading="lazy"></div>
+          <div class="as-slide"><img src="/accion/5.jpg" alt="AO en acción 5" loading="lazy"></div>
+          <div class="as-slide"><img src="/accion/6.jpg" alt="AO en acción 6" loading="lazy"></div>
+        </div>
+      </div>
+      <button class="as-btn next" aria-label="Siguiente">›</button>
+      <div class="as-dots" role="tablist" aria-label="Paginación de galería"></div>
     </div>
   </div>
 </section>
 
-<!-- ====== SEPARADOR ====== -->
 <hr class="divider">
 
-<!-- ================= TIENDA ================= -->
+<!-- ======= TIENDA ======= -->
 <section id="tienda" class="section alt">
   <div class="container">
     <header class="section-hd center">
@@ -215,7 +244,6 @@
       <p class="muted italic">Y si no lo tenemos, ¡te lo conseguimos! 💪</p>
     </header>
 
-    <!-- Filtros + búsqueda -->
     <div class="shop-controls">
       <div class="filters">
         <button class="chip active" data-filter="all">Todos</button>
@@ -226,8 +254,9 @@
       <input id="shopSearch" class="search" type="search" placeholder="Buscar por nombre o código…" aria-label="Buscar productos">
     </div>
 
-    <!-- GRID DE PRODUCTOS (por ahora vacío; se completa con tu lista) -->
-    <div id="shopGrid" class="grid-products"></div>
+    <div id="shopGrid" class="grid-products">
+      <!-- Aquí van tus productos (quedamos en cargarlos más adelante con tu Excel) -->
+    </div>
 
     <div class="center mt-24">
       <a class="btn btn-primary" target="_blank" rel="noopener"
@@ -236,7 +265,7 @@
   </div>
 </section>
 
-<!-- ================= BLOG AO ================= -->
+<!-- ======= BLOG AO (carrusel, 5 posts) ======= -->
 <section id="blog" class="section blog">
   <div class="container">
     <header class="section-hd center">
@@ -244,35 +273,56 @@
       <p>Consejos, tips y novedades sobre refrigeración para el hogar y el comercio.</p>
     </header>
 
-    <div class="blog-grid">
-      <article class="post">
-        <img src="/blog/1.jpg" alt="Mantenimiento de aire acondicionado" loading="lazy">
-        <h3>Cómo mantener tu aire acondicionado en óptimas condiciones</h3>
-        <p>Pequeñas rutinas de limpieza y chequeo que prolongan su vida útil y mejoran su rendimiento.</p>
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://wa.me/543382411473?text=Quiero%20saber%20m%C3%A1s%20sobre%20mantenimiento%20de%20mi%20aire">Leer más</a>
-      </article>
+    <div class="blog-slider" aria-label="Blog AO">
+      <button class="bs-btn prev" aria-label="Anterior">‹</button>
 
-      <article class="post">
-        <img src="/blog/2.jpg" alt="Errores al instalar un aire" loading="lazy">
-        <h3>Errores comunes al instalar un aire</h3>
-        <p>Desde caños mal aislados hasta falta de vacío, qué evitar para no tener problemas después.</p>
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://wa.me/543382411473?text=Consulta%20sobre%20instalaci%C3%B3n%20de%20aires">Leer más</a>
-      </article>
+      <div class="bs-viewport">
+        <div class="bs-track">
+          <!-- 5 tarjetas (links a futuras páginas internas) -->
+          <article class="post-card">
+            <img src="/blog/1-mantenimiento-optimo-aire.jpg" alt="Mantenimiento óptimo del aire">
+            <h3>Mantenimiento óptimo del aire</h3>
+            <p>Rutinas simples para prolongar la vida útil y mejorar el rendimiento.</p>
+            <a class="btn btn-ghost" href="/blog/mantenimiento-optimo-aire.html">Leer más</a>
+          </article>
 
-      <article class="post">
-        <img src="/blog/3.jpg" alt="Mantenimiento preventivo vs correctivo" loading="lazy">
-        <h3>Mantenimiento preventivo vs. correctivo</h3>
-        <p>Por qué anticiparse a las fallas puede ahorrarte dinero y garantizar un mejor funcionamiento.</p>
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://wa.me/543382411473?text=Quiero%20info%20sobre%20mantenimiento%20preventivo">Leer más</a>
-      </article>
+          <article class="post-card">
+            <img src="/blog/2-errores-instalar-aire.jpg" alt="Errores al instalar un aire">
+            <h3>Errores al instalar un aire</h3>
+            <p>Qué evitar para no tener problemas de rendimiento o consumo.</p>
+            <a class="btn btn-ghost" href="/blog/errores-instalar-aire.html">Leer más</a>
+          </article>
+
+          <article class="post-card">
+            <img src="/blog/3-preventivo-vs-correctivo.jpg" alt="Mantenimiento preventivo vs correctivo">
+            <h3>Preventivo vs. correctivo</h3>
+            <p>Cuándo anticiparse y cómo ahorrar en fallas futuras.</p>
+            <a class="btn btn-ghost" href="/blog/mantenimiento-preventivo-vs-correctivo.html">Leer más</a>
+          </article>
+
+          <article class="post-card">
+            <img src="/blog/4-ahorro-energia.jpg" alt="Ahorro de energía en refrigeración">
+            <h3>Ahorro de energía</h3>
+            <p>Buenos hábitos que reducen consumo y cuidan tu equipo.</p>
+            <a class="btn btn-ghost" href="/blog/ahorro-energia-en-refrigeracion.html">Leer más</a>
+          </article>
+
+          <article class="post-card">
+            <img src="/blog/5-heladera-no-enfria.jpg" alt="Heladera no enfría: qué hacer">
+            <h3>Heladera no enfría</h3>
+            <p>Chequeos básicos antes de llamar al servicio.</p>
+            <a class="btn btn-ghost" href="/blog/heladera-no-enfria-que-hacer.html">Leer más</a>
+          </article>
+        </div>
+      </div>
+
+      <button class="bs-btn next" aria-label="Siguiente">›</button>
+      <div class="bs-dots" aria-hidden="true"></div>
     </div>
   </div>
 </section>
 
-<!-- ================= OPINIONES (CARRUSEL) ================= -->
+<!-- ======= OPINIONES (carrusel) ======= -->
 <section id="opiniones" class="section alt">
   <div class="container">
     <header class="section-hd center">
@@ -281,67 +331,22 @@
     </header>
 
     <div class="reviews-carousel" id="reviews">
-      <!-- 15 opiniones -->
-      <figure class="review">
-        <blockquote>“Gracias Alberto, me recuperaste la heladera que me dijeron que no servía más.”</blockquote>
-        <figcaption>— Carla, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Tres técnicos vieron mi aire y ninguno pudo repararlo. Gracias Alberto por recuperarlo.”</blockquote>
-        <figcaption>— Jorge, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Excelente atención, muy prolijo y cumplidor. Recomendado.”</blockquote>
-        <figcaption>— Marcela, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Trabajo rápido, limpio y con muy buena predisposición. Todo perfecto.”</blockquote>
-        <figcaption>— Federico, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Me asesoró incluso antes de comprar el aire, muy buena atención.”</blockquote>
-        <figcaption>— Natalia, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Me salvaron la heladera un sábado a la tarde. ¡Gracias AO!”</blockquote>
-        <figcaption>— Valeria, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Quedó helando de 10. ¡Muy prolijo el trabajo!”</blockquote>
-        <figcaption>— Marcos, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Vinieron cuando dijeron y dejaron todo limpio. Recomendadísimos.”</blockquote>
-        <figcaption>— Carolina, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Mi aire no enfriaba nada. Lo revisaron y quedó perfecto.”</blockquote>
-        <figcaption>— Andrés, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Atención de primera por WhatsApp y en persona. ¡Gracias Alberto!”</blockquote>
-        <figcaption>— Jimena, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Lo que otros no pudieron reparar, AO lo dejó funcionando.”</blockquote>
-        <figcaption>— Pablo, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Precio acorde y cero vueltas. Muy buena onda.”</blockquote>
-        <figcaption>— Daniela, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Me asesoraron antes de comprar y me ahorré un dolor de cabeza.”</blockquote>
-        <figcaption>— Martín, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“Puntuales, limpios y claros. Se nota la experiencia.”</blockquote>
-        <figcaption>— Lucía, Rufino</figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote>“La cámara del local quedó bárbara. ¡Gracias!”</blockquote>
-        <figcaption>— Sergio, Rufino</figcaption>
-      </figure>
+      <!-- (15 opiniones, sin estrellas) -->
+      <figure class="review"><blockquote>“Gracias Alberto, me recuperaste la heladera que me dijeron que no servía más.”</blockquote><figcaption>— Carla, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Tres técnicos vieron mi aire y ninguno pudo repararlo. Gracias Alberto por recuperarlo.”</blockquote><figcaption>— Jorge, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Excelente atención, muy prolijo y cumplidor. Recomendado.”</blockquote><figcaption>— Marcela, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Trabajo rápido, limpio y con muy buena predisposición. Todo perfecto.”</blockquote><figcaption>— Federico, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Me asesoró incluso antes de comprar el aire, muy buena atención.”</blockquote><figcaption>— Natalia, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Me salvaron la heladera un sábado a la tarde. ¡Gracias AO!”</blockquote><figcaption>— Valeria, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Quedó helando de 10. ¡Muy prolijo el trabajo!”</blockquote><figcaption>— Marcos, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Vinieron cuando dijeron y dejaron todo limpio. Recomendadísimos.”</blockquote><figcaption>— Carolina, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Mi aire no enfriaba nada. Lo revisaron y quedó perfecto.”</blockquote><figcaption>— Andrés, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Atención de primera por WhatsApp y en persona. ¡Gracias Alberto!”</blockquote><figcaption>— Jimena, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Lo que otros no pudieron reparar, AO lo dejó funcionando.”</blockquote><figcaption>— Pablo, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Precio acorde y cero vueltas. Muy buena onda.”</blockquote><figcaption>— Daniela, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Me asesoraron antes de comprar y me ahorré un dolor de cabeza.”</blockquote><figcaption>— Martín, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“Puntuales, limpios y claros. Se nota la experiencia.”</blockquote><figcaption>— Lucía, Rufino</figcaption></figure>
+      <figure class="review"><blockquote>“La cámara del local quedó bárbara. ¡Gracias!”</blockquote><figcaption>— Sergio, Rufino</figcaption></figure>
 
       <button class="rev-nav prev" aria-label="Anterior">‹</button>
       <button class="rev-nav next" aria-label="Siguiente">›</button>
@@ -350,7 +355,7 @@
   </div>
 </section>
 
-<!-- ================= FOOTER (con mapa integrado) ================= -->
+<!-- ======= FOOTER (con mapa integrado) ======= -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -364,11 +369,11 @@
       <h4>Accesos rápidos</h4>
       <a href="#quienes">¿Quiénes somos?</a>
       <a href="#servicios">Nuestros servicios</a>
+      <a href="#oficiales">Servicios oficiales</a>
       <a href="#tienda">Tienda AO</a>
       <a href="#accion">AO en acción</a>
-      <a href="#opiniones">Opiniones</a>
-      <a href="#inelro">INELRO</a>
       <a href="#blog">Blog AO</a>
+      <a href="#opiniones">Opiniones</a>
     </nav>
 
     <div class="map-wrap">
@@ -395,13 +400,12 @@
   </div>
 </footer>
 
-<!-- ===== FAB WHATSAPP (BONUS) ===== -->
+<!-- ===== FAB WHATSAPP ===== -->
 <a class="fab-wa" href="https://wa.me/543382411473?text=Hola%20AO%2C%20tengo%20una%20consulta" target="_blank" rel="noopener" aria-label="WhatsApp flotante">
-  <!-- Ícono WA -->
   <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path fill="#fff" d="M19.11 17.02c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.48-1.84-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.23-.55-.45-.47-.62-.47-.16 0-.34-.02-.52-.02-.18 0-.48.07-.74.34-.25.27-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.18 1.96 2.99 4.75 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.11-.25-.18-.52-.32z"/><path fill="#25D366" d="M27.3 4.7c-5.8-5.8-15.2-5.8-21 0-5 5-5.8 12.6-1.8 18.5L2 30l6.9-2.2c5.8 3.2 13.1 2.3 18-2.6 5.8-5.8 5.8-15.2 0-21.1zM24.2 24.3c-4.1 4.1-10.3 4.9-15.3 2l-.9-.5-4.1 1.3 1.3-4-.5-.9c-2.9-5-2.1-11.2 2-15.3 5-5 13.4-5 18.4 0 5.1 5 5.1 13.3 0 18.4z"/></svg>
 </a>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- ===== SCRIPTS ===== -->
 <script>
   // Menú mobile
   (function(){
@@ -411,7 +415,7 @@
     btn.addEventListener('click',()=>nav.classList.toggle('open'));
   })();
 
-  // Sombra en header al hacer scroll (BONUS)
+  // Sombra en header al hacer scroll
   (function(){
     const h=document.getElementById('siteHeader');
     const onScroll=()=> h.classList.toggle('scrolled', window.scrollY>10);
@@ -496,6 +500,112 @@
       items.forEach((el,k)=>el.classList.toggle('active',k===i));
       dots.forEach((d,k)=>d.classList.toggle('active',k===i));
     }
+    function nextIt(){show(i+1)}
+    function prevIt(){show(i-1)}
+    next.addEventListener('click',()=>{nextIt();restart();});
+    prev.addEventListener('click',()=>{prevIt();restart();});
+    dots.forEach((d,k)=>d.addEventListener('click',()=>{show(k);restart();}));
+    function start(){timer=setInterval(nextIt,6000)}
+    function stop(){clearInterval(timer);timer=null}
+    function restart(){stop();start()}
+    show(0); start();
+    box.addEventListener('mouseenter',stop);
+    box.addEventListener('mouseleave',start);
+  })();
+
+  // AO en acción — slider 1:1
+  (function () {
+    const slider = document.querySelector('.action-slider');
+    if (!slider) return;
+
+    const track = slider.querySelector('.as-track');
+    const slides = Array.from(slider.querySelectorAll('.as-slide'));
+    const btnPrev = slider.querySelector('.as-btn.prev');
+    const btnNext = slider.querySelector('.as-btn.next');
+    const dotsWrap = slider.querySelector('.as-dots');
+
+    let index = 0;
+    const max = slides.length - 1;
+
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Ir a la imagen ' + (i + 1));
+      if (i === index) b.setAttribute('aria-current', 'true');
+      b.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(b);
+    });
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dotsWrap.querySelectorAll('button').forEach((d, i) =>
+        i === index ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')
+      );
+      btnPrev.disabled = index === 0;
+      btnNext.disabled = index === max;
+    }
+
+    function goTo(i) { index = Math.max(0, Math.min(max, i)); update(); }
+    btnPrev.addEventListener('click', () => goTo(index - 1));
+    btnNext.addEventListener('click', () => goTo(index + 1));
+
+    // Gestos táctiles
+    let startX = 0, delta = 0, dragging = false;
+    const viewport = slider.querySelector('.as-viewport');
+
+    viewport.addEventListener('pointerdown', (e) => {
+      dragging = true; startX = e.clientX; delta = 0; viewport.setPointerCapture(e.pointerId);
+    });
+    viewport.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      delta = e.clientX - startX;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(calc(-${index * 100}% + ${delta}px))`;
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false; track.style.transition = '';
+      const threshold = viewport.clientWidth * 0.2;
+      if (delta < -threshold) goTo(index + 1);
+      else if (delta > threshold) goTo(index - 1);
+      else update();
+    }
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
+    viewport.addEventListener('pointerleave', endDrag);
+
+    // Teclado
+    viewport.setAttribute('tabindex', '0');
+    viewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(index - 1);
+      if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    update();
+  })();
+
+  // Blog AO — carrusel 5 posts (1 visible)
+  (function(){
+    const box=document.querySelector('.blog-slider');
+    if(!box) return;
+    const track=box.querySelector('.bs-track');
+    const cards=[...box.querySelectorAll('.post-card')];
+    const prev=box.querySelector('.bs-btn.prev');
+    const next=box.querySelector('.bs-btn.next');
+    const dotsWrap=box.querySelector('.bs-dots');
+    dotsWrap.innerHTML='';
+    cards.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.setAttribute('aria-label','Ir al post '+(i+1));
+      dotsWrap.appendChild(b);
+    });
+    const dots=[...dotsWrap.querySelectorAll('button')];
+    let i=0,timer=null;
+    const show=n=>{
+      i=(n+cards.length)%cards.length;
+      track.style.transform=`translateX(-${i*100}%)`;
+      dots.forEach((d,k)=>d.classList.toggle('active',k===i));
+    };
     function nextIt(){show(i+1)}
     function prevIt(){show(i-1)}
     next.addEventListener('click',()=>{nextIt();restart();});
